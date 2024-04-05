@@ -16,6 +16,7 @@ Sõnad võtame Martini isiklikust sõnastikust.
 ## Mängust
 Lähtume eestikeelse Scrabble'i reeglitest, kus on kõikide sõnade kõik vormid lubatud. Mäng toimub 15x15 mängulaual. Igal mängijal on korraga 7 klotsi. Kotis on 102 klotsi (100 tähte ja 2 tühja klotsi), millest igal on kindel punktide arv. Mängulaual on boonusruudud, mis annavad sellel ruudul olevale sõnale või tähele 2- või 3-kordse punktide summa.
 Esimene sõna peab läbima keskmist ruutu. Kõik järgmised sõnad peavad olema ühendatud eelnevalt käidud sõna(de)ga.
+
 Sõnade lauale asetamisel kehtivad reeglid:
 1. Kõik sõnad loetakse ülevalt alla või vasakult paremale.
 2. Kõik iga käigu lõpus eksisteerivad järjestikused tähtede jadad (ülevalt alla ja vasakult paremale) peavad olema sõnastikus defineeritud sõnad.
