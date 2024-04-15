@@ -23,3 +23,6 @@ Sõnade lauale asetamisel kehtivad reeglid:
 3. Ühel käigul peab laduma kõik käidavad tähed ühte ritta või veergu, nii et sinna ritta või veergu tekiks ainult üks sõna, mis võib sisaldada ka juba laual olevaid klotse.
 
 Reaalsuses tuleneb reeglitest, et uusi sõnu saab laduda eelneva sõnaga risti, pikendada, teisele reale kohakuti laduda või moodustada mõni reeglitele vastav kombinatsioon neist.
+
+## Teegid
+Graafika jaoks on plaan üritada kasutada Dear ImGuit. Teiseks on plaan kasutada DAWG andmestruktuuri jaoks spetsiaalset teeki, kus see on juba olemas.
