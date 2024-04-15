@@ -1,4 +1,4 @@
-#include "Scrabble.h"
+#include "..\include\project\Scrabble.h"
 
 int main()
 {
