@@ -1,14 +1,19 @@
 cmake_minimum_required(VERSION 3.27)
 project(Scrabble_projekt_C_)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 23)
 
 include_directories(include)
 include_directories(include/project)
 
 add_executable(Scrabble_projekt_C_
-        build/test.txt
         include/project/Ruut.h
-        include/project/Scrabble.h
         src/Ruut.cpp
-        src/Scrabble.cpp)
+        include/project/Scrabble.h
+        src/Scrabble.cpp
+        include/project/Laud.h
+        src/Laud.cpp
+        include/project/Nupp.h
+        src/Nupp.cpp
+        include/project/Mang.h
+        src/Mang.cpp)
