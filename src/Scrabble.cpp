@@ -1,3 +1,6 @@
-//
-// Created by rasmu on 05.04.2024.
-//
+#include "Scrabble.h"
+
+int main()
+{
+    return 0;
+}
