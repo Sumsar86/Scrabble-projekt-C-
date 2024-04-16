@@ -11,7 +11,7 @@
 #include "Nupp.h"
 
 using namespace std;
-
+//testcomment
 class Ruut {
     shared_ptr<Nupp> m_nupp;
     short m_sonaKordaja;

@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Laud.h"
+//testcomment
 
 set<short> Laud::m_kahekordsedTahed = {3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 165,
                                        172, 179, 186, 188, 213, 221};

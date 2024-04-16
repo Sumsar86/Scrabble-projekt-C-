@@ -3,7 +3,7 @@
 //
 
 #include "Nupp.h"
-
+//testcomment
 Nupp::Nupp(char taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
 
 std::ostream &operator<<(std::ostream &os, const Nupp &nupp) {

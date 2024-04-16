@@ -4,7 +4,7 @@
 
 #ifndef SCRABBLE_PROJEKT_C__NUPP_H
 #define SCRABBLE_PROJEKT_C__NUPP_H
-
+//testcomment
 
 #include <ostream>
 

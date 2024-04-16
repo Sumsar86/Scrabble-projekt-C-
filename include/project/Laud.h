@@ -12,6 +12,7 @@
 #include "Ruut.h"
 
 using namespace std;
+//testcomment
 
 class Laud {
     vector<shared_ptr<Ruut>> m_mangulaud;

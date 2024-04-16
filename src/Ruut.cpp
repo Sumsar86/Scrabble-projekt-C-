@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "../include/project/Ruut.h"
+//testcomment
 
 Ruut::Ruut(short sonaKordaja, short taheKordaja) : m_nupp(nullptr), m_sonaKordaja(sonaKordaja),
                                                                       m_taheKordaja(taheKordaja) {};
