@@ -1,6 +1,6 @@
 #include "..\include\project\Scrabble.h"
 
-int main()
+/*int main()
 {
     return 0;
-}
+}*/

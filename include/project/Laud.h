@@ -6,9 +6,25 @@
 #define SCRABBLE_PROJEKT_C__LAUD_H
 
 
-class Laud {
+#include <ostream>
+#include <vector>
+#include <set>
+#include "Ruut.h"
 
+using namespace std;
+
+class Laud {
+    vector<shared_ptr<Ruut>> m_mangulaud;
+    static set<short> m_kahekordsedTahed;
+    static set<short> m_kolmekordsedTahed;
+    static set<short> m_kahekordsedSonad;
+    static set<short> m_kolmekordsedSonad;
+public:
+    Laud();
+
+    friend ostream &operator<<(ostream &os, const Laud &laud);
 };
+
 
 
 #endif //SCRABBLE_PROJEKT_C__LAUD_H
