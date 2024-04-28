@@ -3,10 +3,32 @@
 //
 
 #include "Nupp.h"
-//testcomment
-Nupp::Nupp(char taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
+
+Nupp::Nupp(string taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
+
 
 std::ostream &operator<<(std::ostream &os, const Nupp &nupp) {
     os << nupp.m_taht;
     return os;
 }
+
+bool Nupp::operator<(const Nupp &rhs) const {
+    if (m_taht < rhs.m_taht)
+        return true;
+    if (rhs.m_taht < m_taht)
+        return false;
+    return m_punktid < rhs.m_punktid;
+}
+
+bool Nupp::operator>(const Nupp &rhs) const {
+    return rhs < *this;
+}
+
+bool Nupp::operator<=(const Nupp &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Nupp::operator>=(const Nupp &rhs) const {
+    return !(*this < rhs);
+}
+

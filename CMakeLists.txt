@@ -16,4 +16,8 @@ add_executable(Scrabble_projekt_C_
         include/project/Nupp.h
         src/Nupp.cpp
         include/project/Mang.h
-        src/Mang.cpp)
+        src/Mang.cpp
+        include/project/Kott.h
+        src/Kott.cpp
+        include/project/Kuna.h
+        src/Kuna.cpp)
