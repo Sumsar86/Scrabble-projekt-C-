@@ -12,6 +12,8 @@ class Nupp {
 public:
     Nupp(string taht, short punktid);
 
+    const string &getTaht() const;
+
     friend std::ostream &operator<<(std::ostream &os, const Nupp &nupp);
 
     bool operator<(const Nupp &rhs) const;
@@ -21,6 +23,10 @@ public:
     bool operator<=(const Nupp &rhs) const;
 
     bool operator>=(const Nupp &rhs) const;
+
+    bool operator==(const Nupp &rhs) const;
+
+    bool operator!=(const Nupp &rhs) const;
 };
 
 

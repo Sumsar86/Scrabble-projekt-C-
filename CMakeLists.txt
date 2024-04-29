@@ -21,4 +21,6 @@ add_executable(Scrabble_projekt_C_
         src/Kott.cpp
         include/project/Kuna.h
         src/Kuna.cpp
+        include/project/Mangija.h
+        src/Mangija.cpp
 )

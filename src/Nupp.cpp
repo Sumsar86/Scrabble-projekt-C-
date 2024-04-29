@@ -32,3 +32,15 @@ bool Nupp::operator>=(const Nupp &rhs) const {
     return !(*this < rhs);
 }
 
+bool Nupp::operator==(const Nupp &rhs) const {
+    return m_taht == rhs.m_taht;
+}
+
+bool Nupp::operator!=(const Nupp &rhs) const {
+    return !(rhs == *this);
+}
+
+const string &Nupp::getTaht() const {
+    return m_taht;
+}
+

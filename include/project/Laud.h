@@ -27,5 +27,4 @@ public:
 };
 
 
-
 #endif //SCRABBLE_PROJEKT_C__LAUD_H
