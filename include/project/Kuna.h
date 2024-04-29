@@ -8,10 +8,10 @@
 
 class Kuna {
 private:
-    short mangija; //mitmenda mängija oma on
-    vector<Nupp> nupud;
+    short m_maxNuppe; //mitmenda mängija oma on
+    vector<Nupp> m_nupud;
 public:
-    Kuna(short mangija, const vector<Nupp> &nupud);
+    Kuna(short maxNuppe, const vector<Nupp> &nupud);
 };
 
 

@@ -4,4 +4,5 @@
 
 #include "Kuna.h"
 
-Kuna::Kuna(short mangija, const vector<Nupp> &nupud) : mangija(mangija), nupud(nupud) {}
+Kuna::Kuna(short maxNuppe, const vector<Nupp> &nupud) : m_maxNuppe(maxNuppe), m_nupud(nupud) {}
+

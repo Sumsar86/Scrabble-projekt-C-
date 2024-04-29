@@ -20,4 +20,5 @@ add_executable(Scrabble_projekt_C_
         include/project/Kott.h
         src/Kott.cpp
         include/project/Kuna.h
-        src/Kuna.cpp)
+        src/Kuna.cpp
+)
