@@ -25,4 +25,4 @@ Sõnade lauale asetamisel kehtivad reeglid:
 Reaalsuses tuleneb reeglitest, et uusi sõnu saab laduda eelneva sõnaga risti, pikendada, teisele reale kohakuti laduda või moodustada mõni reeglitele vastav kombinatsioon neist.
 
 ## Teegid
-Graafika jaoks on plaan üritada kasutada Dear ImGuit. Teiseks on plaan kasutada DAWG andmestruktuuri jaoks spetsiaalset teeki, kus see on juba olemas.
+Graafika jaoks on plaan üritada kasutada Dear ImGuit. Teiseks on plaan kasutada DAWG andmestruktuuri loomiseks spetsiaalset teeki, kus see on juba olemas: https://github.com/chalup/dawggenerator.git. Sellega saadava DAWG-andmestruktuuri lugemiseks ja analüüsimiseks kasutame omaloodud teeki: https://github.com/MartinPuskin/Dawg.git.
