@@ -2,7 +2,6 @@
 // Created by Martin on 15.04.2024.
 //
 
-#include <utility>
 #include <iostream>
 
 #include "../include/project/Ruut.h"

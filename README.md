@@ -4,7 +4,7 @@
 Martin Puškini ja Rasmus Valgu ühine C++ projekt.
 
 ## Kirjeldus
-Esmalt loome töötava Scrabble'i mängu, mis annab igale mängijale klotsid, laseb mängijal lauale sõna asetada, kontrollib, kas see on legaalne, arvutab punktid.
+Esmalt loome töötava Scrabble'i mängu, mis annab igale mängijale klotsid, laseb mängijal lauale sõna asetada, kontrollib, kas see on legaalne, arvutab m_punktid.
 Teiseks lisame mitme mängija toe.
 Kolmandaks implementeerime algoritmi, nii et vähemalt üks mängijatest saaks ka arvuti olla. On ka võimalus panna arvuti arvuti vastu mängima.
 
