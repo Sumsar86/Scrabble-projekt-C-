@@ -50,3 +50,17 @@ ostream &operator<<(ostream &os, const Laud &laud) {
     os << "     A B C D E F G H I J K L M N O\n";
     return os;
 }
+
+bool Laud::kontrolli(shared_ptr<Kaik> kaik) {
+    return false;
+}
+
+bool Laud::kontrolliPos(shared_ptr<Kaik> kaik) {
+    return false;
+}
+
+bool Laud::kontrolliSonu(shared_ptr<Kaik> kaik) {
+    return false;
+}
+
+

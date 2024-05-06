@@ -10,6 +10,7 @@
 #include <vector>
 #include <set>
 #include "Ruut.h"
+#include "Kaik.h"
 
 using namespace std;
 
@@ -19,8 +20,13 @@ class Laud {
     static set<short> m_kolmekordsedTahed;
     static set<short> m_kahekordsedSonad;
     static set<short> m_kolmekordsedSonad;
+
+    bool kontrolliPos(shared_ptr<Kaik> kaik);
+    bool kontrolliSonu(shared_ptr<Kaik> kaik);
 public:
     Laud();
+
+    bool kontrolli(shared_ptr<Kaik> kaik);
 
     friend ostream &operator<<(ostream &os, const Laud &laud);
 };
