@@ -23,6 +23,13 @@ class Laud {
 
     bool kontrolliPos(shared_ptr<Kaik> kaik);
     bool kontrolliSonu(shared_ptr<Kaik> kaik);
+    bool kasEsimeneKaik();
+    bool kasIndeksTyhi(int indeks);
+
+    int leiaSonaAlgusReas(int indeks);
+    int leiaSonaAlgusVeerus(int indeks);
+
+
 public:
     Laud();
 

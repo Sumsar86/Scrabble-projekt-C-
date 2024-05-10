@@ -52,15 +52,116 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 }
 
 bool Laud::kontrolli(shared_ptr<Kaik> kaik) {
-    return false;
+    return kontrolliPos(kaik) && kontrolliSonu(kaik);
 }
 
 bool Laud::kontrolliPos(shared_ptr<Kaik> kaik) {
+    bool onReas = kaik->yhesReas();
+    bool onVeerus = kaik->yhesVeerus();
+    int indeks, viimane;
+    if (!(onReas || onVeerus))
+        return false;
+
+    if (onReas){
+        indeks = kaik->esimeneIndeks();
+        viimane = kaik->viimaneIndeks();
+        while (indeks != viimane){
+            if (!kasIndeksTyhi(indeks) && kaik->kasIndeksOlemas(indeks) || kasIndeksTyhi(indeks) && !(kaik->kasIndeksOlemas(indeks)))
+                return false;
+            indeks++;
+        }
+    }
+    else{
+        indeks = kaik->esimeneIndeks();
+        viimane = kaik->viimaneIndeks();
+        while (indeks != viimane){
+            if (!kasIndeksTyhi(indeks) && kaik->kasIndeksOlemas(indeks) || kasIndeksTyhi(indeks) && !(kaik->kasIndeksOlemas(indeks)))
+                return false;
+            indeks += 15;
+        }
+    }
+
+    if (kasEsimeneKaik()){
+        if (!(kaik->kasIndeksOlemas(m_mangulaud.size()/2)))
+            return false;
+    }
+
+    for (int i : *kaik->getIndeksid()){
+        if (!kasIndeksTyhi(i - 1))
+            return true;
+        if (!kasIndeksTyhi(i + 1))
+            return true;
+        if (!kasIndeksTyhi(i - 15))
+            return true;
+        if (!kasIndeksTyhi(i + 15))
+            return true;
+    }
     return false;
 }
 
-bool Laud::kontrolliSonu(shared_ptr<Kaik> kaik) {
-    return false;
+bool Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrektselt positsioneeritud
+    bool onReas = kaik->yhesReas();
+    if (onReas){
+        int praegune = leiaSonaAlgusReas(kaik->esimeneIndeks());
+        string sona{};
+
+        while ((praegune - 1) % 15 + 1 != 0 && kaik->kasIndeksOlemas(praegune - 1))
+            praegune -= 1;
+        do{
+            if (!kasIndeksTyhi(praegune)) {
+                sona += m_mangulaud[praegune]->getNupp()->getTaht();
+                praegune += 1;
+            }
+            else if (kaik->kasIndeksOlemas(praegune)) {
+                int ajutine = leiaSonaAlgusVeerus(praegune);
+                string teineSona{};
+                while (!kasIndeksTyhi(ajutine) && ajutine != praegune){
+                    if (ajutine != praegune)
+                        teineSona += m_mangulaud[ajutine]->getNupp()->getTaht();
+                    else{
+                        teineSona += kaik->getNupp(ajutine)->getTaht();
+                    }
+                    if (ajutine > 209)
+                        break;
+                    ajutine += 15;
+                }
+                //test: if !KasSona(teineSona) return false;
+                sona += kaik->getNupp(ajutine)->getTaht();
+            }
+        }
+        while (praegune % 15 != 0);
+        //test: return KasSona(sona);
+    }
+}
+
+bool Laud::kasEsimeneKaik() {
+    for (int i{0}; i < m_mangulaud.size(); i++){
+        if (!kasIndeksTyhi(i))
+            return false;
+    }
+    return true;
+}
+
+bool Laud::kasIndeksTyhi(int indeks) {
+    return m_mangulaud[indeks]->kasTyhi();
+}
+
+int Laud::leiaSonaAlgusReas(int indeks) {
+    while (indeks % 15 > 0){
+        indeks--;
+        if (kasIndeksTyhi(indeks))
+            return ++indeks;
+    }
+    return indeks;
+}
+
+int Laud::leiaSonaAlgusVeerus(int indeks) {
+    while (indeks / 15 > 0){
+        indeks -= 15;
+        if (kasIndeksTyhi(indeks))
+            return indeks + 15;
+    }
+    return indeks;
 }
 
 

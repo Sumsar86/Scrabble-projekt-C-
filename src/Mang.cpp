@@ -12,7 +12,7 @@ int main() {
 
     shared_ptr<Kott> kott = make_shared<Kott>();
 
-    cout << "kos on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
+    cout << "kas on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
 
     Mangija m(kott);
 //    cout << "kos on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
@@ -25,7 +25,7 @@ int main() {
     cout << "} uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(vahetatavad_tahed) << "\n";
 
     cout << m << "\n\n";
-    cout << "kos on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
+    cout << "kas on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
 
     for (int i = 0; i < 102 - 7; i++)
         cout << *kott->getNupp() << " ";

@@ -26,3 +26,11 @@ ostream &operator<<(ostream &os, const Ruut &ruut) {
     os << ruut.m_nupp;
     return os;
 }
+
+bool Ruut::kasTyhi() {
+    return !m_nupp;
+}
+
+const shared_ptr<Nupp> &Ruut::getNupp() const {
+    return m_nupp;
+}

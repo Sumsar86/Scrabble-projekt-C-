@@ -4,7 +4,7 @@
 
 #include "Nupp.h"
 
-Nupp::Nupp(string taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
+Nupp::Nupp(char taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
 
 
 std::ostream &operator<<(std::ostream &os, const Nupp &nupp) {
@@ -40,7 +40,7 @@ bool Nupp::operator!=(const Nupp &rhs) const {
     return !(rhs == *this);
 }
 
-const string &Nupp::getTaht() const {
+const char &Nupp::getTaht() const {
     return m_taht;
 }
 

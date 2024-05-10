@@ -7,12 +7,12 @@
 using namespace std;
 
 class Nupp {
-    string m_taht;
+    char m_taht;
     short m_punktid;
 public:
     Nupp(string taht, short punktid);
 
-    const string &getTaht() const;
+    const char &getTaht() const;
 
     friend std::ostream &operator<<(std::ostream &os, const Nupp &nupp);
 

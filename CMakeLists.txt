@@ -6,7 +6,11 @@ set(CMAKE_CXX_STANDARD 23)
 include_directories(include)
 include_directories(include/project)
 
-add_library(DAWG ../DAWG/Dawg.cpp)
+add_library(DAWG ../DAWG/Dawg.cpp
+        include/project/Kaik.h
+        src/Kaik.cpp
+        ../DAWG/Dawg2.cpp
+)
 
 add_executable(Scrabble_projekt_C_
         include/project/Ruut.h
