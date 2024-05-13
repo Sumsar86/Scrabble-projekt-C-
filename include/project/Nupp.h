@@ -10,7 +10,7 @@ class Nupp {
     char m_taht;
     short m_punktid;
 public:
-    Nupp(string taht, short punktid);
+    Nupp(char taht, short punktid);
 
     const char &getTaht() const;
 

@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "Laud.h"
-#include "Dawg.cpp"
+#include "Dawg.h"
 
 set<short> Laud::m_kahekordsedTahed = {3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 165,
                                        172, 179, 186, 188, 213, 221};
@@ -53,6 +53,8 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 }
 
 bool Laud::kontrolli(shared_ptr<Kaik> kaik) {
+    cout << boolalpha << kontrolliPos(kaik) << '\n';
+    cout << boolalpha << kontrolliSonu(kaik) << '\n';
     return kontrolliPos(kaik) && kontrolliSonu(kaik);
 }
 

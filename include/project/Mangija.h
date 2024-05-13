@@ -20,7 +20,7 @@ private:
 public:
     explicit Mangija(shared_ptr<Kott> &kott);
 
-    bool vahetaNupud(vector<string> &tahed);
+    bool vahetaNupud(vector<char> &tahed);
 
     friend ostream &operator<<(ostream &os, const Mangija &mangija);
 };

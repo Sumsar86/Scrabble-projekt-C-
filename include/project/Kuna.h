@@ -16,9 +16,9 @@ private:
 public:
     Kuna(short maxNuppe, const shared_ptr<Kott> &kott);
 
-    shared_ptr<Nupp> kas_sisaldab_nuppu(const string &taht);
+    shared_ptr<Nupp> kas_sisaldab_nuppu(const char &taht);
 
-    bool vahetaNupp(vector<string> &tahed, shared_ptr<Kott> &kott);
+    bool vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott);
 
     friend ostream &operator<<(ostream &os, const Kuna &kuna);
 };

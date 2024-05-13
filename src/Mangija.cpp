@@ -11,7 +11,7 @@ ostream &operator<<(ostream &os, const Mangija &mangija) {
     return os;
 }
 
-bool Mangija::vahetaNupud(vector<string> &tahed) {
+bool Mangija::vahetaNupud(vector<char> &tahed) {
     return m_kuna.vahetaNupp(tahed, mp_kott);
 }
 

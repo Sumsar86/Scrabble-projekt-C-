@@ -17,7 +17,7 @@ ostream &operator<<(ostream &os, const Kuna &kuna) {
     return os;
 }
 
-shared_ptr<Nupp> Kuna::kas_sisaldab_nuppu(const string &taht) {
+shared_ptr<Nupp> Kuna::kas_sisaldab_nuppu(const char &taht) {
     for (auto nupp: m_nupud) {
         if (nupp->getTaht() == taht)
             return nupp;
@@ -26,12 +26,12 @@ shared_ptr<Nupp> Kuna::kas_sisaldab_nuppu(const string &taht) {
 //    return std::any_of(m_nupud.begin(), m_nupud.end(), [nupp](const shared_ptr<Nupp> &el) { return nupp == *el; });
 }
 
-bool Kuna::vahetaNupp(vector<string> &tahed, shared_ptr<Kott> &kott) {
+bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     if (kott->getNuppudeArv() < 7 || tahed.size() > 7)
         return false;
 
     vector<shared_ptr<Nupp>> nupud;
-    for (const string &taht: tahed)
+    for (const char &taht: tahed)
         nupud.push_back(kas_sisaldab_nuppu(taht));
 
     bool vastus{true};
