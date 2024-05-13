@@ -4,11 +4,25 @@
 
 #include "Mang.h"
 #include "Mangija.h"
-//testcomment
+#include <memory>
 
 int main() {
     Laud laud{};
     cout << laud;
+    shared_ptr<Nupp> taht1 = make_shared<Nupp>('A', 1);
+    shared_ptr<Nupp> taht2 = make_shared<Nupp>('A', 1);
+    shared_ptr<Nupp> taht3 = make_shared<Nupp>('B', 3);
+    shared_ptr<Nupp> taht4 = make_shared<Nupp>('I', 1);
+    shared_ptr<Nupp> taht5 = make_shared<Nupp>('T', 1);
+    shared_ptr<Nupp> taht6 = make_shared<Nupp>('S', 1);
+    shared_ptr<Nupp> taht7 = make_shared<Nupp>('A', 1);
+
+    map<int, shared_ptr<Nupp>> sona1{{112, taht1}, {113,taht2}};
+
+    shared_ptr<Kaik> kaik = make_shared<Kaik>(sona1);
+
+    cout << boolalpha << laud.kontrolli(kaik);
+
 
     return 0;
 }

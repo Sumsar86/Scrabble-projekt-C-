@@ -53,6 +53,8 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 }
 
 bool Laud::kontrolli(shared_ptr<Kaik> kaik) {
+    cout << boolalpha << kontrolliPos(kaik) << '\n';
+    cout << boolalpha << kontrolliSonu(kaik) << '\n';
     return kontrolliPos(kaik) && kontrolliSonu(kaik);
 }
 

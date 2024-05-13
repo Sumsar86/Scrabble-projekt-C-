@@ -47,7 +47,7 @@ bool Kaik::kasIndeksOlemas(int indeks) {
 }
 
 shared_ptr<vector<int>> Kaik::getIndeksid() {
-    shared_ptr<vector<int>> indeksid;
+    shared_ptr<vector<int>> indeksid = make_shared<vector<int>>();
     for (auto el : m_kaik)
         indeksid->push_back(el.first);
     return indeksid;
