@@ -28,6 +28,9 @@ class Laud {
 
     int leiaSonaAlgusReas(int indeks);
     int leiaSonaAlgusVeerus(int indeks);
+    int leiaSonaLoppReas(int indeks);
+    int leiaSonaLoppVeerus(int indeks);
+
 
 
 public:

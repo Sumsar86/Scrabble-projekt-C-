@@ -53,8 +53,6 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 }
 
 bool Laud::kontrolli(shared_ptr<Kaik> kaik) {
-    cout << boolalpha << kontrolliPos(kaik) << '\n';
-    cout << boolalpha << kontrolliSonu(kaik) << '\n';
     return kontrolliPos(kaik) && kontrolliSonu(kaik);
 }
 
@@ -62,8 +60,10 @@ bool Laud::kontrolliPos(shared_ptr<Kaik> kaik) {
     bool onReas = kaik->yhesReas();
     bool onVeerus = kaik->yhesVeerus();
     int indeks, viimane;
-    if (!(onReas || onVeerus))
+    if (!(onReas || onVeerus)) {
+        cerr << "Ei ole reas ega veerus!\n";
         return false;
+    }
 
     if (onReas){
         indeks = kaik->esimeneIndeks();
@@ -87,6 +87,7 @@ bool Laud::kontrolliPos(shared_ptr<Kaik> kaik) {
     if (kasEsimeneKaik()){
         if (!(kaik->kasIndeksOlemas(m_mangulaud.size()/2)))
             return false;
+        return true;
     }
 
     for (int i : *kaik->getIndeksid()){
@@ -104,37 +105,64 @@ bool Laud::kontrolliPos(shared_ptr<Kaik> kaik) {
 
 bool Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrektselt positsioneeritud
     bool onReas = kaik->yhesReas();
+    int praegune;
+    string sona{}, teineSona{};
     if (onReas){
-        int praegune = leiaSonaAlgusReas(kaik->esimeneIndeks());
-        string sona{};
+        praegune = leiaSonaAlgusReas(kaik->esimeneIndeks());
 
         while ((praegune - 1) % 15 + 1 != 0 && kaik->kasIndeksOlemas(praegune - 1))
             praegune -= 1;
         do{
             if (!kasIndeksTyhi(praegune)) {
                 sona += m_mangulaud[praegune]->getNupp()->getTaht();
-                praegune += 1;
             }
             else if (kaik->kasIndeksOlemas(praegune)) {
+                teineSona = "";
                 int ajutine = leiaSonaAlgusVeerus(praegune);
-                string teineSona{};
-                while (!kasIndeksTyhi(ajutine) && ajutine != praegune){
+                while (!kasIndeksTyhi(ajutine) || ajutine == praegune){
                     if (ajutine != praegune)
                         teineSona += m_mangulaud[ajutine]->getNupp()->getTaht();
                     else{
                         teineSona += kaik->getNupp(ajutine)->getTaht();
                     }
-                    if (ajutine > 209)
+                    if (ajutine > 209) // kontroll, et oleme viimases reas
                         break;
                     ajutine += 15;
                 }
-                if (!(Dawg::kasSona(teineSona))) return false;
-                sona += kaik->getNupp(ajutine)->getTaht();
+                if (teineSona.size() >= 2 && !(Dawg::kasSona(teineSona))) return false;
+                sona += kaik->getNupp(praegune)->getTaht();
             }
-        }
-        while (praegune % 15 != 0);
+            praegune += 1;
+        } while (praegune != leiaSonaLoppReas(kaik->viimaneIndeks()) + 1);
         return Dawg::kasSona(sona);
     }
+
+    praegune = leiaSonaAlgusVeerus(kaik->esimeneIndeks());
+    while ((praegune - 15) / 15 + 1 != 0 && kaik->kasIndeksOlemas(praegune - 15)) //Liigume laual ülemise sõnaga ühendatud täheni vastavas veerus
+        praegune -= 15;
+    do{ //Liigume ülevalt alla ja konstrueerime sõna
+        if (!kasIndeksTyhi(praegune)) {
+            sona += m_mangulaud[praegune]->getNupp()->getTaht();
+        }
+        else if (kaik->kasIndeksOlemas(praegune)) {
+            int ajutine = leiaSonaAlgusReas(praegune);
+            teineSona = "";
+            while (!kasIndeksTyhi(ajutine) || ajutine == praegune){
+                if (ajutine != praegune)
+                    teineSona += m_mangulaud[ajutine]->getNupp()->getTaht();
+                else{
+                    teineSona += kaik->getNupp(ajutine)->getTaht();
+                }
+                if (ajutine % 15 == 14) //kontroll, et oleme viimases veerus
+                    break;
+                ajutine += 1;
+            }
+            if (teineSona.size() >= 2 && !(Dawg::kasSona(teineSona))) return false;
+            sona += kaik->getNupp(praegune)->getTaht();
+        }
+        praegune += 15;
+    } while (praegune != leiaSonaLoppVeerus(kaik->viimaneIndeks()) + 15);
+    return Dawg::kasSona(sona);
 }
 
 bool Laud::kasEsimeneKaik() {
@@ -158,11 +186,29 @@ int Laud::leiaSonaAlgusReas(int indeks) {
     return indeks;
 }
 
+int Laud::leiaSonaLoppReas(int indeks) {
+    while (indeks % 15 < 14){
+        indeks++;
+        if (kasIndeksTyhi(indeks))
+            return --indeks;
+    }
+    return indeks;
+}
+
 int Laud::leiaSonaAlgusVeerus(int indeks) {
     while (indeks / 15 > 0){
         indeks -= 15;
         if (kasIndeksTyhi(indeks))
             return indeks + 15;
+    }
+    return indeks;
+}
+
+int Laud::leiaSonaLoppVeerus(int indeks) {
+    while (indeks / 15 < 14){
+        indeks += 15;
+        if (kasIndeksTyhi(indeks))
+            return indeks - 15;
     }
     return indeks;
 }
