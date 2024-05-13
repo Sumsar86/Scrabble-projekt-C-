@@ -23,4 +23,8 @@ add_executable(Scrabble_projekt_C_
         src/Kuna.cpp
         include/project/Mangija.h
         src/Mangija.cpp
+        src/Dawg.cpp
+        include/project/Dawg.h
+        include/project/Kaik.h
+        src/Kaik.cpp
 )

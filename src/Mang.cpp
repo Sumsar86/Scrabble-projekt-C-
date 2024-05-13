@@ -10,6 +10,12 @@ int main() {
     Laud laud{};
     cout << laud;
 
+    return 0;
+}
+
+
+
+/*
     shared_ptr<Kott> kott = make_shared<Kott>();
 
     cout << "kas on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
@@ -19,9 +25,9 @@ int main() {
 
     cout << m << "\n\n";
 
-    vector<string> vahetatavad_tahed{"U", "A", "E"};
+    vector<char> vahetatavad_tahed{'U', 'A', 'E'};
     cout << "vahetan {";
-    for_each(vahetatavad_tahed.begin(), vahetatavad_tahed.end(), [](const string& taht){cout << taht << " ";});
+    for_each(vahetatavad_tahed.begin(), vahetatavad_tahed.end(), [](const char& taht){cout << taht << " ";});
     cout << "} uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(vahetatavad_tahed) << "\n";
 
     cout << m << "\n\n";
@@ -31,7 +37,5 @@ int main() {
         cout << *kott->getNupp() << " ";
     cout << "\nkas on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
 
-    cout << "vahetan 'e' uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(*(new vector<string>{"E"})) << "\n";
-
-    return 0;
-}
+    cout << "vahetan 'e' uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(*(new vector<char>{'E'})) << "\n";
+ */

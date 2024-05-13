@@ -1,34 +1,11 @@
-//
-// Created by Martin on 06.05.2024.
-//
-
 #include <iostream>
 #include <fstream>
 #include <utility>
 #include <vector>
 #include <bitset>
+#include "Dawg.h"
 
 using namespace std;
-
-class Dawg {
-private:
-    static vector<int> m_dawg;
-
-    static vector<int> readIntegers(const string &failiNimi);
-
-    static bool kasLasteLopp(int tipp);
-
-    static bool kasSonaLopp(int tipp);
-
-    static char misTaht(int tipp);
-
-    static int misLaps(int tipp);
-
-public:
-    Dawg(string failiNimi);
-
-    bool static kasSona(string sona, int algus);
-};
 
 vector<int> Dawg::readIntegers(const string &failiNimi) {
     ifstream input(failiNimi, ios::binary);
@@ -49,9 +26,8 @@ vector<int> Dawg::readIntegers(const string &failiNimi) {
     return integers;
 }
 
-Dawg::Dawg(string failiNimi) {
-    m_dawg = readIntegers(failiNimi);
-}
+vector<int> Dawg::m_dawg = Dawg::readIntegers("SonaList.dat");
+
 
 bool Dawg::kasLasteLopp(int tipp) {
     if ((tipp & (1 << 28)) == 0) return false;
@@ -91,7 +67,7 @@ string capitalizeAndReplace(string str) {
 // Kontrollib, kas käidud sõna on korrektne sõna.
 // dawg on graaf, algus on rekursiooni jaoks esimene indeks, esimest korda panna
 // selle väärtuseks 2, sona on otsitav sõna
-bool Dawg::kasSona(string sona, int algus = 2) {
+bool Dawg::kasSona(string sona, int algus) {
     sona = capitalizeAndReplace(sona);
     for (int i{algus}; i < m_dawg.size(); i++) {
         if (sona.length() > 1 && sona[0] == misTaht(m_dawg[i]) && kasSona(sona.substr(1), misLaps(m_dawg[i]) + 1)) {
