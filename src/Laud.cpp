@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Laud.h"
+#include "Dawg.cpp"
 
 set<short> Laud::m_kahekordsedTahed = {3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 165,
                                        172, 179, 186, 188, 213, 221};
@@ -125,12 +126,12 @@ bool Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrekt
                         break;
                     ajutine += 15;
                 }
-                //test: if !KasSona(teineSona) return false;
+                if (!(Dawg::kasSona(teineSona))) return false;
                 sona += kaik->getNupp(ajutine)->getTaht();
             }
         }
         while (praegune % 15 != 0);
-        //test: return KasSona(sona);
+        return Dawg::kasSona(sona);
     }
 }
 
