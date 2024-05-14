@@ -8,7 +8,7 @@
 
 int main() {
     Laud laud{};
-    cout << laud;
+    //cout << laud;
     shared_ptr<Nupp> taht1 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht2 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht3 = make_shared<Nupp>('B', 3);
@@ -17,7 +17,9 @@ int main() {
     shared_ptr<Nupp> taht6 = make_shared<Nupp>('S', 1);
     shared_ptr<Nupp> taht7 = make_shared<Nupp>('A', 1);
 
-    map<int, shared_ptr<Nupp>> sona1{{112, taht1}, {113,taht2}};
+    map<int, shared_ptr<Nupp>> sona1{{82, taht1}, {97,taht2},
+                                     {112,taht3}, {127,taht4}, {142,taht5},
+                                     {157,taht6}};
 
     shared_ptr<Kaik> kaik = make_shared<Kaik>(sona1);
 

@@ -13,8 +13,9 @@ bool Kaik::yhesReas() {
     if (m_kaik.size() < 2)
         return true;
     for (auto it = m_kaik.begin(); it != m_kaik.end(); ++it){
-        if (it->first / 15 != (--it)->first / 15)
+        if (it->first / 15 != (++it)->first / 15){
             return false;
+        }
         it++;
     }
     return true;
@@ -24,7 +25,7 @@ bool Kaik::yhesVeerus() {
     if (m_kaik.size() < 2)
         return true;
     for (auto it = m_kaik.begin(); it != m_kaik.end(); ++it){
-        if (it->first % 15 != (--it)->first % 15)
+        if (it->first % 15 != (++it)->first % 15)
             return false;
         it++;
     }
