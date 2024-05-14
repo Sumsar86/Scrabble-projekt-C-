@@ -263,7 +263,7 @@ bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
 }
 
 //tagastab -1, kui pole korrektne sõna, tagastab korrektse sõna puhul selle punktid.
-int Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrektselt positsioneeritud
+int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on korrektselt positsioneeritud
     bool onReas = kaik->yhesReas();
     int praegune;
     string sona{}, teineSona{};
@@ -367,7 +367,7 @@ int Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrekts
             sona += m_mangulaud[praegune]->getNupp()->getTaht();
             sonaPunktid += m_mangulaud[praegune]->getNupp()->getPunktid();
         }
-        // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
+            // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
         else if (kaik->kasIndeksOlemas(praegune)) {
             // Reas tekkiv sõna
             teineSona = "";
@@ -377,27 +377,24 @@ int Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrekts
             teiseSonaPunktid = 0;
             teiseSonaKordaja = 1;
             // Kui vasakult paremale liikudes on laual juba täht või on käidav täht
-            while (!kasIndeksTyhi(ajutine) || ajutine == praegune){
+            while (!kasIndeksTyhi(ajutine) || ajutine == praegune) {
                 // Kui täht on juba laual olemas või on see meie käidav täht lisame selle reas tekkivale sõnale otsa
                 if (ajutine != praegune) {
                     teineSona += m_mangulaud[ajutine]->getNupp()->getTaht();
                     teiseSonaPunktid += m_mangulaud[ajutine]->getNupp()->getPunktid();
-                }
-                else{
+                } else {
                     teineSona += kaik->getNupp(ajutine)->getTaht();
                     if (m_kahekordsedTahed.contains(ajutine))
                         teiseSonaPunktid += 2 * (kaik->getNupp(ajutine)->getPunktid());
                     else if (m_kolmekordsedTahed.contains(ajutine))
                         teiseSonaPunktid += 3 * (kaik->getNupp(ajutine)->getPunktid());
-                    else if (m_kahekordsedSonad.contains(ajutine)){
+                    else if (m_kahekordsedSonad.contains(ajutine)) {
                         teiseSonaKordaja = 2;
                         teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
-                    }
-                    else if (m_kolmekordsedSonad.contains(ajutine)){
+                    } else if (m_kolmekordsedSonad.contains(ajutine)) {
                         teiseSonaKordaja = 3;
                         teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
-                    }
-                    else teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
+                    } else teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
                 }
                 // Kas oleme juba viimases vaarus
                 if (ajutine % 15 == 14) //kontroll, et oleme viimases veerus
@@ -415,15 +412,13 @@ int Laud::kontrolliSonu(shared_ptr<Kaik> kaik) { //eeldame, et käik on korrekts
                 sonaPunktid += 2 * (kaik->getNupp(praegune)->getPunktid());
             else if (m_kolmekordsedTahed.contains(praegune))
                 sonaPunktid += 3 * (kaik->getNupp(praegune)->getPunktid());
-            else if (m_kahekordsedSonad.contains(praegune)){
+            else if (m_kahekordsedSonad.contains(praegune)) {
                 sonaKordaja *= 2;
                 sonaPunktid += kaik->getNupp(praegune)->getPunktid();
-            }
-            else if (m_kolmekordsedSonad.contains(praegune)){
+            } else if (m_kolmekordsedSonad.contains(praegune)) {
                 sonaKordaja *= 3;
                 sonaPunktid += kaik->getNupp(praegune)->getPunktid();
-            }
-            else{
+            } else {
                 sonaPunktid += kaik->getNupp(praegune)->getPunktid();
             }
         }
