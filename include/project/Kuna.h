@@ -1,7 +1,4 @@
-// Created by Martin on 28.04.2024.
-
-#ifndef SCRABBLE_PROJEKT_C__KUNA_H
-#define SCRABBLE_PROJEKT_C__KUNA_H
+#pragma once
 
 #include <vector>
 #include <memory>
@@ -22,6 +19,3 @@ public:
 
     friend ostream &operator<<(ostream &os, const Kuna &kuna);
 };
-
-
-#endif //SCRABBLE_PROJEKT_C__KUNA_H

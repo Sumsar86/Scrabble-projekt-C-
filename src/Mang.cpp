@@ -1,14 +1,10 @@
-//
-// Created by Martin on 15.04.2024.
-//
-
 #include "Mang.h"
 #include "Mangija.h"
 #include <memory>
 
 int main() {
     Laud laud{};
-    //cout << laud;
+//    cout << laud;
     shared_ptr<Nupp> taht1 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht2 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht3 = make_shared<Nupp>('B', 3);
@@ -50,7 +46,7 @@ int main() {
     cout << "kas on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
 
     for (int i = 0; i < 102 - 7; i++)
-        cout << *kott->getNupp() << " ";
+        cout << *kott->getJuhuslikNupp() << " ";
     cout << "\nkas on tühi: " << boolalpha << kott->kas_on_tuhi() << ", " << *kott << "\n";
 
     cout << "vahetan 'e' uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(*(new vector<char>{'E'})) << "\n";

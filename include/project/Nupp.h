@@ -1,5 +1,4 @@
-#ifndef SCRABBLE_PROJEKT_C__NUPP_H
-#define SCRABBLE_PROJEKT_C__NUPP_H
+#pragma once
 
 #include <ostream>
 #include <string>
@@ -28,7 +27,3 @@ public:
 
     bool operator!=(const Nupp &rhs) const;
 };
-
-
-
-#endif //SCRABBLE_PROJEKT_C__NUPP_H
