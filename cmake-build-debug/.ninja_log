@@ -1,7 +1,12 @@
 # ninja log v5
 288	2267	7373191686701025	CMakeFiles/Scrabble_projekt_C_.dir/src/Scrabble.cpp.obj	ed0e7718f926cd05
-188	17537	7373191839363438	CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj	af5e3ed077699ac8
-381	31533	7373191977669043	CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj	4154219b4a11ce16
-653	60032	7373192256905423	CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj	c374acdd57e3ab8
-816	63472	7373192293742076	CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj	fe8cfe48d6525e55
-636	34999	7373193669953978	CMakeFiles/Scrabble_projekt_C_.dir/src/Mangija.cpp.obj	d08d69ef4848c0da
+199	33755	7373198066798469	CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj	af5e3ed077699ac8
+319	51951	7373198247797958	CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj	4154219b4a11ce16
+515	67001	7373198399927118	CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj	c374acdd57e3ab8
+637	78003	7373198510235789	CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj	fe8cfe48d6525e55
+29675	84790	7373198578302610	CMakeFiles/Scrabble_projekt_C_.dir/src/Mangija.cpp.obj	d08d69ef4848c0da
+422	29660	7373198026207301	CMakeFiles/Scrabble_projekt_C_.dir/src/Nupp.cpp.obj	7030c34155dcc711
+33759	70719	7373198437358415	CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj	47a55b8ed7262cd2
+789	73387	7373198464102188	CMakeFiles/Scrabble_projekt_C_.dir/src/Kuna.cpp.obj	4bb655dffb8a6184
+51958	82875	7373198558855091	CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj	1c2fbe2c5cc9c68c
+84795	89921	7373198628823354	Scrabble_projekt_C_.exe	c98333a788ceab15
