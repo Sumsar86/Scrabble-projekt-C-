@@ -20,9 +20,10 @@ class Laud {
     static set<short> m_kolmekordsedTahed;
     static set<short> m_kahekordsedSonad;
     static set<short> m_kolmekordsedSonad;
+    static map<char, int> m_tahePunktid;
 
     bool kontrolliPos(shared_ptr<Kaik> kaik);
-    bool kontrolliSonu(shared_ptr<Kaik> kaik);
+    int kontrolliSonu(shared_ptr<Kaik> kaik); //return -1 kui pole korrektne käik, vastasel juhul return saadavad punktid
     bool kasEsimeneKaik();
     bool kasIndeksTyhi(int indeks);
 
@@ -31,12 +32,12 @@ class Laud {
     int leiaSonaLoppReas(int indeks);
     int leiaSonaLoppVeerus(int indeks);
 
-
-
 public:
     Laud();
+    Laud(vector<shared_ptr<Ruut>> mangulaud);
+    Laud(string mangulaud); //sisestada 225-karakteriline string tähtedega laual õigetes kohtades. Ülejäänud kohtades peab olema "_".
 
-    bool kontrolli(shared_ptr<Kaik> kaik);
+    int kontrolli(shared_ptr<Kaik> kaik); //tagastab -1 kui pole korrektne käik, vastasel juhul tagastab saadavad punktid
 
     friend ostream &operator<<(ostream &os, const Laud &laud);
 };

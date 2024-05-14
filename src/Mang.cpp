@@ -7,8 +7,38 @@
 #include <memory>
 
 int main() {
+    /*Laud laud("_______________"
+              "_______________"
+              "__J__________M_"
+              "__Q___W___JUGA_"
+              "__U_T_E___O__I_"
+              "__K_U_S___T__N_"
+              "__A_R_TAFTIL_E_"
+              "__MXNGITA____N_"
+              "__A_E_D_I____I_"
+              "____E__________"
+              "____D__________"
+              "_______________"
+              "_______________"
+              "_______________"
+              "_______________");*/
     Laud laud{};
-    //cout << laud;
+    cout << laud;
+    /*vector<shared_ptr<Ruut>> asi;
+    for (int i{0}; i < 225; i++){
+        if (i == 1) {
+            auto nupp = make_shared<Nupp>('A', 1);
+            auto ruut = make_shared<Ruut>(nupp);
+            asi.push_back(ruut);
+        }
+        else{
+            asi.push_back(make_shared<Ruut>(1,1));
+        }
+    }
+    Laud laud(asi);
+    */
+
+    /*
     shared_ptr<Nupp> taht1 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht2 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht3 = make_shared<Nupp>('B', 3);
@@ -16,15 +46,18 @@ int main() {
     shared_ptr<Nupp> taht5 = make_shared<Nupp>('T', 1);
     shared_ptr<Nupp> taht6 = make_shared<Nupp>('S', 1);
     shared_ptr<Nupp> taht7 = make_shared<Nupp>('A', 1);
+    shared_ptr<Nupp> taht8 = make_shared<Nupp>('S', 1);
+    shared_ptr<Nupp> taht9 = make_shared<Nupp>('T', 1);
 
-    map<int, shared_ptr<Nupp>> sona1{{82, taht1}, {97,taht2},
-                                     {112,taht3}, {127,taht4}, {142,taht5},
-                                     {157,taht6}};
+    map<int, shared_ptr<Nupp>> sona1{{112, taht1}, {127,taht2},
+                                     {142,taht3}, {157,taht4}, {172,taht5},
+                                     {187,taht6}, {202, taht7}
+    };
 
     shared_ptr<Kaik> kaik = make_shared<Kaik>(sona1);
 
-    cout << boolalpha << laud.kontrolli(kaik);
-
+    cout << laud.kontrolli(kaik);
+    */
 
     return 0;
 }

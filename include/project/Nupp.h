@@ -14,6 +14,8 @@ public:
 
     const char &getTaht() const;
 
+    short getPunktid() const;
+
     friend std::ostream &operator<<(std::ostream &os, const Nupp &nupp);
 
     bool operator<(const Nupp &rhs) const;

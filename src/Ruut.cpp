@@ -3,12 +3,15 @@
 //
 
 #include <iostream>
+#include <utility>
 
 #include "../include/project/Ruut.h"
 //testcomment
 
 Ruut::Ruut(short sonaKordaja, short taheKordaja) : m_nupp(nullptr), m_sonaKordaja(sonaKordaja),
                                                                       m_taheKordaja(taheKordaja) {};
+
+Ruut::Ruut(shared_ptr<Nupp> nupp) : m_nupp(std::move(nupp)), m_sonaKordaja(1), m_taheKordaja(1){};
 
 ostream &operator<<(ostream &os, const Ruut &ruut) {
     if (!ruut.m_nupp){
@@ -23,7 +26,7 @@ ostream &operator<<(ostream &os, const Ruut &ruut) {
         os << "_";
         return os;
     }
-    os << ruut.m_nupp;
+    os << *(ruut.getNupp());
     return os;
 }
 
