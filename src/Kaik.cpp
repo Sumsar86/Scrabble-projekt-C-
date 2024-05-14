@@ -3,7 +3,11 @@
 #include <algorithm>
 #include <iostream>
 
-Kaik::Kaik(const map<int, shared_ptr<Nupp>> &mKaik) : m_kaik(mKaik) {}
+Kaik::Kaik(const map<int, shared_ptr<Nupp>> &mKaik) : m_kaik(mKaik) {
+    if (any_of(mKaik.begin(),mKaik.end(),[](const auto &el){return (el.first < 0 || el.first > 224);})){
+        throw invalid_argument("Indeks mängulaualt väljas!\n");
+    }
+}
 
 // Kontrollib, kas kõik käigus käidud nupud asuvad ühel real
 bool Kaik::yhesReas() {

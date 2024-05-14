@@ -5,7 +5,7 @@ Nupp::Nupp(char taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
 
 // Nupu kuvamiseks ekraanil
 std::ostream &operator<<(std::ostream &os, const Nupp &nupp) {
-    os << nupp.m_taht;
+    os << nupp.getTaht();
     return os;
 }
 
@@ -46,5 +46,9 @@ bool Nupp::operator!=(const Nupp &rhs) const {
 // Tagastab nupu tähe
 const char &Nupp::getTaht() const {
     return m_taht;
+}
+
+short Nupp::getPunktid() const {
+    return m_punktid;
 }
 

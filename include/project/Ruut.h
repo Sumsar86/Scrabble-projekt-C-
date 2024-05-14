@@ -14,6 +14,7 @@ private:
     short m_taheKordaja;
 public:
     Ruut(short sonaKordaja, short taheKordaja);
+    Ruut(shared_ptr<Nupp> nupp);
 
     bool kasTyhi();
 

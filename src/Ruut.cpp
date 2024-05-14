@@ -1,8 +1,11 @@
 #include <iostream>
 #include "Ruut.h"
+#include <utility>
 
 // Ruudu konstruktor
 Ruut::Ruut(short sonaKordaja, short taheKordaja) : m_nupp(nullptr), m_sonaKordaja(sonaKordaja), m_taheKordaja(taheKordaja) {};
+
+Ruut::Ruut(shared_ptr<Nupp> nupp) : m_nupp(std::move(nupp)), m_sonaKordaja(1), m_taheKordaja(1){};
 
 // Ruudu kuvamiseks ekraanil
 ostream &operator<<(ostream &os, const Ruut &ruut) {
@@ -23,7 +26,7 @@ ostream &operator<<(ostream &os, const Ruut &ruut) {
         return os;
     }
     // Kui ruudul on nupp, siis kordajaid ei kuvata
-    os << ruut.m_nupp;
+    os << *(ruut.getNupp());
     return os;
 }
 
