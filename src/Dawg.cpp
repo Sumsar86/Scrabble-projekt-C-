@@ -7,10 +7,10 @@
 using namespace std;
 
 // Loeb failist täisarve
-vector<int> Dawg::readIntegers(const string &failiNimi) {
-    ifstream input(failiNimi, ios::binary);
+vector<int> Dawg::readIntegers(const string &faili_nimi) {
+    ifstream input(faili_nimi, ios::binary);
     if (!input.is_open()) {
-        cerr << "Error: Cannot open file " << failiNimi << '\n';
+        cerr << "Error: Cannot open file " << faili_nimi << '\n';
         return {};
     }
 

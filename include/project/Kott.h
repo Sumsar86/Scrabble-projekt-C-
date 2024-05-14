@@ -19,9 +19,9 @@ private:
     mt19937 m_rng;
     uniform_int_distribution<std::mt19937::result_type> m_juhuslik_arv;
 
-    void loo_juhuarvu_generaator();
+    void looJuhuarvuGeneraator();
 
-    void leia_nuppude_arv();
+    void leiaNuppudeArv();
 
 public:
     explicit Kott(map<shared_ptr<Nupp>, int> nupud);

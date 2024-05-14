@@ -36,14 +36,14 @@ map<shared_ptr<Nupp>, int> Kott::m_vaike_kott = {
 
 // Konstruktor, mis võtab varasemalt defineeritud koti sisu. Lisaks seab valmis juhuarvu generaatori.
 Kott::Kott(map<shared_ptr<Nupp>, int> nupud) : m_nupud(std::move(nupud)), m_nuppude_arv(0) {
-    leia_nuppude_arv();
-    loo_juhuarvu_generaator();
+    leiaNuppudeArv();
+    looJuhuarvuGeneraator();
 }
 
 // Konstruktor, mis kasutab standardset koti sisu. Lisaks seab valmis juhuarvu generaatori.
 Kott::Kott() : m_nupud(m_vaike_kott), m_nuppude_arv(0) {
-    leia_nuppude_arv();
-    loo_juhuarvu_generaator();
+    leiaNuppudeArv();
+    looJuhuarvuGeneraator();
 }
 
 // Tagastab kotist juhusliku nupu. Kui nuppe pole tagastab nullptr.
@@ -64,7 +64,7 @@ shared_ptr<Nupp> Kott::getJuhuslikNupp() {
 }
 
 // Seab valmis juhuarvu generaatori.
-void Kott::loo_juhuarvu_generaator() {
+void Kott::looJuhuarvuGeneraator() {
     // https://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
     random_device rd;
     mt19937::result_type seed = rd() ^ (
@@ -89,7 +89,7 @@ ostream &operator<<(ostream &os, const Kott &kott) {
 }
 
 // Arvutab kotis olevate nuppude arvu ja salvestab selle privaatsesse muutujasse m_nuppude_arv.
-void Kott::leia_nuppude_arv() {
+void Kott::leiaNuppudeArv() {
     for (const auto &it: m_nupud)
         m_nuppude_arv += it.second;
 }

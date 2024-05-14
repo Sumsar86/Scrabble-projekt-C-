@@ -1,22 +1,22 @@
 #include <iostream>
 #include "Kuna.h"
 
-// Konstruktor, mis loob uue Küna, võttes kotist juhuslikult maxNuppe arvu nuppe.
-Kuna::Kuna(short maxNuppe, const shared_ptr<Kott> &kott) : m_maxNuppe(maxNuppe), m_nupud({}) {
-    for (int i = 0; i < maxNuppe; i++)
+// Konstruktor, mis loob uue Küna, võttes kotist juhuslikult max_arv_nuppe arvu nuppe.
+Kuna::Kuna(short max_arv_nuppe, const shared_ptr<Kott> &kott) : m_max_arv_nuppe(max_arv_nuppe), m_nupud({}) {
+    for (int i = 0; i < max_arv_nuppe; i++)
         m_nupud.push_back(kott->getJuhuslikNupp());
 }
 
 // Küna ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Kuna &kuna) {
-    os << "maxNuppe: " << kuna.m_maxNuppe << ", nupud: ";
+    os << "max arv nuppe: " << kuna.m_max_arv_nuppe << ", nupud: ";
     for (const auto &it: kuna.m_nupud)
         os << *it << ", ";
     return os;
 }
 
 // Tagastab viida nupule, kui see on künal, vastasel juhul tagastab nullptr.
-shared_ptr<Nupp> Kuna::kas_sisaldab_nuppu(const char &taht) {
+shared_ptr<Nupp> Kuna::kasSisaldabNuppu(const char &taht) {
     for (auto nupp: m_nupud) {
         if (nupp->getTaht() == taht)
             return nupp;
@@ -33,7 +33,7 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
 
     vector<shared_ptr<Nupp>> nupud;
     for (const char &taht: tahed)
-        nupud.push_back(kas_sisaldab_nuppu(taht));
+        nupud.push_back(kasSisaldabNuppu(taht));
 
     bool vastus{true};
     for (int i = 0; i < nupud.size(); i++) {

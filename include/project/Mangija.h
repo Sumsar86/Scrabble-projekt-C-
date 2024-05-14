@@ -8,7 +8,7 @@
 
 class Mangija {
 private:
-    std::shared_ptr<Kott> mp_kott;
+    shared_ptr<Kott> mp_kott;
     Kuna m_kuna;
     int m_punktid;
 

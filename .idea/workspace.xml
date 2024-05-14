@@ -20,10 +20,32 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Lisasin kommentaare ja parandasin veidi koodi. Kõikjal">
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Parandasin tekkinud vead">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Dawg.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Dawg.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kaik.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kaik.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kott.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kott.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kuna.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kuna.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/project/Laud.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Laud.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Mang.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mang.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Mangija.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mangija.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Ruut.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Ruut.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Scrabble.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dawg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dawg.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kaik.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kaik.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kott.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kott.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kuna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kuna.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Laud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Laud.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nupp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nupp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ruut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ruut.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scrabble.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +122,7 @@
       <updated>1715615588040</updated>
       <workItem from="1715615604368" duration="1130000" />
       <workItem from="1715616875009" duration="834000" />
-      <workItem from="1715697744066" duration="10288000" />
+      <workItem from="1715697744066" duration="11897000" />
     </task>
     <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
       <option name="closed" value="true" />
@@ -134,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715707035384</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Parandasin tekkinud vead">
+      <option name="closed" value="true" />
+      <created>1715708446282</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715708446282</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +191,7 @@
     <MESSAGE value="Eemaldasin Dawg2.cpp 2" />
     <MESSAGE value="Ei teinud midagi" />
     <MESSAGE value="Lisasin kommentaare ja parandasin veidi koodi. Kõikjal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lisasin kommentaare ja parandasin veidi koodi. Kõikjal" />
+    <MESSAGE value="Parandasin tekkinud vead" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parandasin tekkinud vead" />
   </component>
 </project>

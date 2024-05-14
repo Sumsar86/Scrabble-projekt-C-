@@ -48,6 +48,7 @@ const char &Nupp::getTaht() const {
     return m_taht;
 }
 
+// Tagastab nupu punktid
 short Nupp::getPunktid() const {
     return m_punktid;
 }

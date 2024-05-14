@@ -4,84 +4,85 @@
 #include "Dawg.h"
 
 // Erinevate ruutude sõna- ja tähekordajad laual
-set<short> Laud::m_kahekordsedTahed = {3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 165,
-                                       172, 179, 186, 188, 213, 221};
-set<short> Laud::m_kolmekordsedTahed = {20, 24, 76, 80, 84, 88, 136, 140, 144, 148, 200, 204};
-set<short> Laud::m_kahekordsedSonad = {16, 28, 32, 42, 48, 56, 64, 70, 112, 154, 160, 168, 176, 182, 192, 196, 208};
-set<short> Laud::m_kolmekordsedSonad = {0, 14, 105, 119, 210, 224};
+set<short> Laud::m_kahekordsed_tahed = {3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 165,
+                                        172, 179, 186, 188, 213, 221};
+set<short> Laud::m_kolmekordsed_tahed = {20, 24, 76, 80, 84, 88, 136, 140, 144, 148, 200, 204};
+set<short> Laud::m_kahekordsed_sonad = {16, 28, 32, 42, 48, 56, 64, 70, 112, 154, 160, 168, 176, 182, 192, 196, 208};
+set<short> Laud::m_kolmekordsed_sonad = {0, 14, 105, 119, 210, 224};
 
-map<char, int> Laud::m_tahePunktid = {{'A', 1},
-                                      {'a', 0},
-                                      {'B', 3},
-                                      {'b', 0},
-                                      {'D', 2},
-                                      {'d', 0},
-                                      {'E', 1},
-                                      {'e', 0},
-                                      {'F', 8},
-                                      {'f', 0},
-                                      {'G', 3},
-                                      {'g', 0},
-                                      {'H', 4},
-                                      {'h', 0},
-                                      {'I', 1},
-                                      {'i', 0},
-                                      {'J', 4},
-                                      {'j', 0},
-                                      {'K', 1},
-                                      {'k', 0},
-                                      {'L', 1},
-                                      {'l', 0},
-                                      {'M', 2},
-                                      {'m', 0},
-                                      {'N', 2},
-                                      {'n', 0},
-                                      {'O', 1},
-                                      {'0', 0},
-                                      {'P', 4},
-                                      {'p', 0},
-                                      {'R', 2},
-                                      {'r', 0},
-                                      {'S', 1},
-                                      {'s', 0},
-                                      {'$', 10},
-                                      {'#', 0},
-                                      {'Z', 10},
-                                      {'z', 0},
-                                      {'W', 10},
-                                      {'w', 0},
-                                      {'T', 1},
-                                      {'t', 0},
-                                      {'U', 1},
-                                      {'u', 0},
-                                      {'V', 3},
-                                      {'v', 0},
-                                      {'Q', 4},
-                                      {'q', 0},
-                                      {'X', 5},
-                                      {'x', 0},
-                                      {'C', 6},
-                                      {'c', 0},
-                                      {'Y', 5},
-                                      {'y', 0},
-                                      {'?', 0}};
+// Kõigi tähtede punktid (väikesed on tühjad ruudud, seega punkte ei anna)
+map<char, int> Laud::m_tahe_punktid = {{'A', 1},
+                                       {'a', 0},
+                                       {'B', 3},
+                                       {'b', 0},
+                                       {'D', 2},
+                                       {'d', 0},
+                                       {'E', 1},
+                                       {'e', 0},
+                                       {'F', 8},
+                                       {'f', 0},
+                                       {'G', 3},
+                                       {'g', 0},
+                                       {'H', 4},
+                                       {'h', 0},
+                                       {'I', 1},
+                                       {'i', 0},
+                                       {'J', 4},
+                                       {'j', 0},
+                                       {'K', 1},
+                                       {'k', 0},
+                                       {'L', 1},
+                                       {'l', 0},
+                                       {'M', 2},
+                                       {'m', 0},
+                                       {'N', 2},
+                                       {'n', 0},
+                                       {'O', 1},
+                                       {'0', 0},
+                                       {'P', 4},
+                                       {'p', 0},
+                                       {'R', 2},
+                                       {'r', 0},
+                                       {'S', 1},
+                                       {'s', 0},
+                                       {'$', 10},
+                                       {'#', 0},
+                                       {'Z', 10},
+                                       {'z', 0},
+                                       {'W', 10},
+                                       {'w', 0},
+                                       {'T', 1},
+                                       {'t', 0},
+                                       {'U', 1},
+                                       {'u', 0},
+                                       {'V', 3},
+                                       {'v', 0},
+                                       {'Q', 4},
+                                       {'q', 0},
+                                       {'X', 5},
+                                       {'x', 0},
+                                       {'C', 6},
+                                       {'c', 0},
+                                       {'Y', 5},
+                                       {'y', 0},
+                                       {'?', 0}};
 
 // Laua konstruktor, mis loob mängualguse laua ehk lisab sinna õigete kordajatega tühjad ruudud
 Laud::Laud() {
     for (short i{0}; i < 225; i++) {
-        if (m_kahekordsedTahed.contains(i)) {
+        if (m_kahekordsed_tahed.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(1, 2));
             continue;
         }
-        if (m_kolmekordsedTahed.contains(i)) {
+        if (m_kolmekordsed_tahed.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(1, 3));
             continue;
         }
-        if (m_kahekordsedSonad.contains(i)) {
+        if (m_kahekordsed_sonad.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(2, 1));
             continue;
         }
-        if (m_kolmekordsedSonad.contains(i)) {
+        if (m_kolmekordsed_sonad.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(3, 1));
             continue;
         }
@@ -89,26 +90,28 @@ Laud::Laud() {
     }
 }
 
+// Laua konstruktor, mis võtab sisendiks olemasolevate ruutudega vektori
 Laud::Laud(vector<shared_ptr<Ruut>> mangulaud) {
     m_mangulaud = std::move(mangulaud);
 }
 
+// Laua konstruktor, mis võtab aluseks sõne ja loob selle järgi uue laua
 Laud::Laud(string mangulaud) {
     if (mangulaud.size() != 225)
         throw invalid_argument("Stringi pikkus konstruktoris peab olema täpselt 225 ühikut!\n");
     for (int i{0}; i < 225; i++) {
         if (mangulaud[i] != '_')
-            m_mangulaud.push_back(make_shared<Ruut>(make_shared<Nupp>(mangulaud[i], m_tahePunktid[mangulaud[i]])));
-        else if (m_kahekordsedTahed.contains(i)) {
+            m_mangulaud.push_back(make_shared<Ruut>(make_shared<Nupp>(mangulaud[i], m_tahe_punktid[mangulaud[i]])));
+        else if (m_kahekordsed_tahed.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(1, 2));
             continue;
-        } else if (m_kolmekordsedTahed.contains(i)) {
+        } else if (m_kolmekordsed_tahed.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(1, 3));
             continue;
-        } else if (m_kahekordsedSonad.contains(i)) {
+        } else if (m_kahekordsed_sonad.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(2, 1));
             continue;
-        } else if (m_kolmekordsedSonad.contains(i)) {
+        } else if (m_kolmekordsed_sonad.contains(i)) {
             m_mangulaud.push_back(make_shared<Ruut>(3, 1));
             continue;
         } else m_mangulaud.push_back(make_shared<Ruut>(1, 1));
@@ -272,7 +275,10 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
     int sonaPunktid{0}; //peamise sõna punktid ilma sõna x N boonus(t)eta.
     int teiseSonaPunktid;
     int teiseSonaKordaja; //mitmega risti olev sõna korrutatakse
-    if (kaik->getIndeksid()->size() >= 7) punktid += 50;
+
+    // Kui kõik nupud (künasse mahub 7 nuppu) korraga ära käia saab boonuseks 50 punkti
+    if (kaik->getIndeksid()->size() >= 7)
+        punktid += 50;
 
     // Kui sõna käidi reas
     if (onReas) {
@@ -290,30 +296,32 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
                 sona += m_mangulaud[praegune]->getNupp()->getTaht();
                 sonaPunktid += m_mangulaud[praegune]->getNupp()->getPunktid();
             }
-                // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
+            // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
             else if (kaik->kasIndeksOlemas(praegune)) {
                 // Veerus tekkiv sõna
                 teineSona = "";
-                // Leiame veerus tekkiva sõna kõige ülemise tähe indeksi
                 teiseSonaPunktid = 0;
                 teiseSonaKordaja = 1;
+                // Leiame veerus tekkiva sõna kõige ülemise tähe indeksi
                 int ajutine = leiaSonaAlgusVeerus(praegune);
                 // Kui ülevalt alla liikudes on laual juba täht või on käidav täht
                 while (!kasIndeksTyhi(ajutine) || ajutine == praegune) {
                     // Kui täht on juba laual olemas või on see meie käidav täht lisame selle veerus tekkivale sõnale otsa
+                    // Lisaks liidame tähe eest saadavad punktid
                     if (ajutine != praegune) {
                         teineSona += m_mangulaud[ajutine]->getNupp()->getTaht();
                         teiseSonaPunktid += m_mangulaud[ajutine]->getNupp()->getPunktid();
                     } else {
+                        // Kui on praegu käidud nupp, arvestame ka erinevaid ruutude kordajaid
                         teineSona += kaik->getNupp(ajutine)->getTaht();
-                        if (m_kahekordsedTahed.contains(ajutine))
+                        if (m_kahekordsed_tahed.contains(ajutine))
                             teiseSonaPunktid += 2 * (kaik->getNupp(ajutine)->getPunktid());
-                        else if (m_kolmekordsedTahed.contains(ajutine))
+                        else if (m_kolmekordsed_tahed.contains(ajutine))
                             teiseSonaPunktid += 3 * (kaik->getNupp(ajutine)->getPunktid());
-                        else if (m_kahekordsedSonad.contains(ajutine)) {
+                        else if (m_kahekordsed_sonad.contains(ajutine)) {
                             teiseSonaKordaja = 2;
                             teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
-                        } else if (m_kolmekordsedSonad.contains(ajutine)) {
+                        } else if (m_kolmekordsed_sonad.contains(ajutine)) {
                             teiseSonaKordaja = 3;
                             teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
                         } else teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
@@ -330,14 +338,15 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
                 if (teineSona.size() >= 2 && Dawg::kasSona(teineSona)) punktid += teiseSonaKordaja * teiseSonaPunktid;
                 // Lisame käidud tähe sõnale otsa
                 sona += kaik->getNupp(praegune)->getTaht();
-                if (m_kahekordsedTahed.contains(praegune))
+                // Lisaks liidame tähe eest saadavad punktid arvestades sealjuures kordajaid
+                if (m_kahekordsed_tahed.contains(praegune))
                     sonaPunktid += 2 * (kaik->getNupp(praegune)->getPunktid());
-                else if (m_kolmekordsedTahed.contains(praegune))
+                else if (m_kolmekordsed_tahed.contains(praegune))
                     sonaPunktid += 3 * (kaik->getNupp(praegune)->getPunktid());
-                else if (m_kahekordsedSonad.contains(praegune)) {
+                else if (m_kahekordsed_sonad.contains(praegune)) {
                     sonaKordaja *= 2;
                     sonaPunktid += kaik->getNupp(praegune)->getPunktid();
-                } else if (m_kolmekordsedSonad.contains(praegune)) {
+                } else if (m_kolmekordsed_sonad.contains(praegune)) {
                     sonaKordaja *= 3;
                     sonaPunktid += kaik->getNupp(praegune)->getPunktid();
                 } else {
@@ -347,8 +356,10 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             // Järgmine veerg
             praegune += 1;
         } while (praegune != leiaSonaLoppReas(kaik->viimaneIndeks()) + 1);
+        // Kas on päris sõna, siis tagastame sõna eest saadud punktid
         if (Dawg::kasSona(sona))
             return punktid + sonaKordaja * sonaPunktid;
+        // Sellist sõna pole olemas
         return -1;
     }
 
@@ -367,7 +378,7 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             sona += m_mangulaud[praegune]->getNupp()->getTaht();
             sonaPunktid += m_mangulaud[praegune]->getNupp()->getPunktid();
         }
-            // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
+        // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
         else if (kaik->kasIndeksOlemas(praegune)) {
             // Reas tekkiv sõna
             teineSona = "";
@@ -379,19 +390,21 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             // Kui vasakult paremale liikudes on laual juba täht või on käidav täht
             while (!kasIndeksTyhi(ajutine) || ajutine == praegune) {
                 // Kui täht on juba laual olemas või on see meie käidav täht lisame selle reas tekkivale sõnale otsa
+                // Lisaks liidame tähe eest saadavad punktid
                 if (ajutine != praegune) {
                     teineSona += m_mangulaud[ajutine]->getNupp()->getTaht();
                     teiseSonaPunktid += m_mangulaud[ajutine]->getNupp()->getPunktid();
                 } else {
+                    // Kui on praegu käidud nupp, arvestame ka erinevaid ruutude kordajaid
                     teineSona += kaik->getNupp(ajutine)->getTaht();
-                    if (m_kahekordsedTahed.contains(ajutine))
+                    if (m_kahekordsed_tahed.contains(ajutine))
                         teiseSonaPunktid += 2 * (kaik->getNupp(ajutine)->getPunktid());
-                    else if (m_kolmekordsedTahed.contains(ajutine))
+                    else if (m_kolmekordsed_tahed.contains(ajutine))
                         teiseSonaPunktid += 3 * (kaik->getNupp(ajutine)->getPunktid());
-                    else if (m_kahekordsedSonad.contains(ajutine)) {
+                    else if (m_kahekordsed_sonad.contains(ajutine)) {
                         teiseSonaKordaja = 2;
                         teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
-                    } else if (m_kolmekordsedSonad.contains(ajutine)) {
+                    } else if (m_kolmekordsed_sonad.contains(ajutine)) {
                         teiseSonaKordaja = 3;
                         teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
                     } else teiseSonaPunktid += kaik->getNupp(ajutine)->getPunktid();
@@ -408,14 +421,15 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             if (teineSona.size() >= 2 && Dawg::kasSona(teineSona)) punktid += teiseSonaKordaja * teiseSonaPunktid;
             // Lisame käidud tähe sõnale otsa
             sona += kaik->getNupp(praegune)->getTaht();
-            if (m_kahekordsedTahed.contains(praegune))
+            // Lisaks liidame tähe eest saadavad punktid arvestades sealjuures kordajaid
+            if (m_kahekordsed_tahed.contains(praegune))
                 sonaPunktid += 2 * (kaik->getNupp(praegune)->getPunktid());
-            else if (m_kolmekordsedTahed.contains(praegune))
+            else if (m_kolmekordsed_tahed.contains(praegune))
                 sonaPunktid += 3 * (kaik->getNupp(praegune)->getPunktid());
-            else if (m_kahekordsedSonad.contains(praegune)) {
+            else if (m_kahekordsed_sonad.contains(praegune)) {
                 sonaKordaja *= 2;
                 sonaPunktid += kaik->getNupp(praegune)->getPunktid();
-            } else if (m_kolmekordsedSonad.contains(praegune)) {
+            } else if (m_kolmekordsed_sonad.contains(praegune)) {
                 sonaKordaja *= 3;
                 sonaPunktid += kaik->getNupp(praegune)->getPunktid();
             } else {
@@ -425,9 +439,11 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
         // Järgmine rida
         praegune += 15;
     } while (praegune != leiaSonaLoppVeerus(kaik->viimaneIndeks()) + 15);
+    // Kui sõna on päriselt olemas, sagastame selle eest saadavad punktid
     if (Dawg::kasSona(sona)) {
         return punktid + sonaKordaja * sonaPunktid;
     }
+    // Sellist sõna ei ole olemas
     return -1;
 }
 

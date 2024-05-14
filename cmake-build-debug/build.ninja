@@ -56,13 +56,6 @@ build CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj: CXX_COMPILER__Scrabbl
   OBJECT_DIR = CMakeFiles\Scrabble_projekt_C_.dir
   OBJECT_FILE_DIR = CMakeFiles\Scrabble_projekt_C_.dir\src
 
-build CMakeFiles/Scrabble_projekt_C_.dir/src/Scrabble.cpp.obj: CXX_COMPILER__Scrabble_projekt_C__unscanned_Debug D$:/rasmus/Programmid/C++/UT/Programmeerimine$ keeles$ C++/Grupitöö/Scrabble-projekt-C-/src/Scrabble.cpp || cmake_object_order_depends_target_Scrabble_projekt_C_
-  DEP_FILE = CMakeFiles\Scrabble_projekt_C_.dir\src\Scrabble.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -I"D:/rasmus/Programmid/C++/UT/Programmeerimine keeles C++/Grupitöö/Scrabble-projekt-C-/include" -I"D:/rasmus/Programmid/C++/UT/Programmeerimine keeles C++/Grupitöö/Scrabble-projekt-C-/include/project"
-  OBJECT_DIR = CMakeFiles\Scrabble_projekt_C_.dir
-  OBJECT_FILE_DIR = CMakeFiles\Scrabble_projekt_C_.dir\src
-
 build CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj: CXX_COMPILER__Scrabble_projekt_C__unscanned_Debug D$:/rasmus/Programmid/C++/UT/Programmeerimine$ keeles$ C++/Grupitöö/Scrabble-projekt-C-/src/Laud.cpp || cmake_object_order_depends_target_Scrabble_projekt_C_
   DEP_FILE = CMakeFiles\Scrabble_projekt_C_.dir\src\Laud.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
@@ -127,7 +120,7 @@ build CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj: CXX_COMPILER__Scrabbl
 #############################################
 # Link the executable Scrabble_projekt_C_.exe
 
-build Scrabble_projekt_C_.exe: CXX_EXECUTABLE_LINKER__Scrabble_projekt_C__Debug CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Scrabble.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Nupp.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Kuna.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Mangija.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj
+build Scrabble_projekt_C_.exe: CXX_EXECUTABLE_LINKER__Scrabble_projekt_C__Debug CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Nupp.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Kuna.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Mangija.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Scrabble_projekt_C_.dir

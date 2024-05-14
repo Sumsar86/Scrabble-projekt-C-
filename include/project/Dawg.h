@@ -15,7 +15,7 @@ private:
     static int misLaps(int tipp);
 
 public:
-    static vector<int> readIntegers(const string &failiNimi);
+    static vector<int> readIntegers(const string &faili_nimi);
 
     bool static kasSona(string sona, int algus = 2);
 };

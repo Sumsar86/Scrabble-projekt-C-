@@ -3,8 +3,9 @@
 #include <algorithm>
 #include <iostream>
 
-Kaik::Kaik(const map<int, shared_ptr<Nupp>> &mKaik) : m_kaik(mKaik) {
-    if (any_of(mKaik.begin(),mKaik.end(),[](const auto &el){return (el.first < 0 || el.first > 224);})){
+// Käigu konstruktor, kui mõne nupu indeks on laualt väljas visatakse erind
+Kaik::Kaik(const map<int, shared_ptr<Nupp>> &kaik) : m_kaik(kaik) {
+    if (any_of(kaik.begin(), kaik.end(), [](const auto &el){return (el.first < 0 || el.first > 224);})){
         throw invalid_argument("Indeks mängulaualt väljas!\n");
     }
 }

@@ -3,22 +3,23 @@
 #include <utility>
 
 // Ruudu konstruktor
-Ruut::Ruut(short sonaKordaja, short taheKordaja) : m_nupp(nullptr), m_sonaKordaja(sonaKordaja), m_taheKordaja(taheKordaja) {};
+Ruut::Ruut(short sonakordaja, short tahekordaja) : mp_nupp(nullptr), m_sonakordaja(sonakordaja), m_tahekordaja(tahekordaja) {};
 
-Ruut::Ruut(shared_ptr<Nupp> nupp) : m_nupp(std::move(nupp)), m_sonaKordaja(1), m_taheKordaja(1){};
+// Ruudu konstruktor, mis võtab olemasoleva nupu endale aluseks
+Ruut::Ruut(shared_ptr<Nupp> nupp) : mp_nupp(std::move(nupp)), m_sonakordaja(1), m_tahekordaja(1){};
 
 // Ruudu kuvamiseks ekraanil
 ostream &operator<<(ostream &os, const Ruut &ruut) {
     // Kui ruudule ei ole veel nuppu käidud
-    if (!ruut.m_nupp){
+    if (!ruut.mp_nupp){
         // Kui ruudul on tähekordaja
-        if (ruut.m_taheKordaja > 1) {
-            os << ruut.m_taheKordaja;
+        if (ruut.m_tahekordaja > 1) {
+            os << ruut.m_tahekordaja;
             return os;
         }
         // Kui ruudul on sõnakordaja
-        if (ruut.m_sonaKordaja > 1) {
-            os << ruut.m_sonaKordaja;
+        if (ruut.m_sonakordaja > 1) {
+            os << ruut.m_sonakordaja;
             return os;
         }
         // Kui ruut on täiesti tühi (ehk kõik kordajad on ühed)
@@ -32,12 +33,12 @@ ostream &operator<<(ostream &os, const Ruut &ruut) {
 
 // Kas ruudule on nupp asetatud
 bool Ruut::kasTyhi() {
-    return !m_nupp;
+    return !mp_nupp;
 }
 
 // Tagastab enale asetatud nupu
 const shared_ptr<Nupp> &Ruut::getNupp() const {
-    if (!m_nupp)
+    if (!mp_nupp)
         cerr << "Ruudul pole nuppu! Tagastan nullptr.\n";
-    return m_nupp;
+    return mp_nupp;
 }

@@ -9,11 +9,11 @@ using namespace std;
 
 class Ruut {
 private:
-    shared_ptr<Nupp> m_nupp;
-    short m_sonaKordaja;
-    short m_taheKordaja;
+    shared_ptr<Nupp> mp_nupp;
+    short m_sonakordaja;
+    short m_tahekordaja;
 public:
-    Ruut(short sonaKordaja, short taheKordaja);
+    Ruut(short sonakordaja, short tahekordaja);
     Ruut(shared_ptr<Nupp> nupp);
 
     bool kasTyhi();
