@@ -5,6 +5,7 @@
 #include "string"
 #include "Nupp.h"
 
+
 using namespace std;
 
 class Ruut {

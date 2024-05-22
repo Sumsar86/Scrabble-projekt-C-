@@ -3,23 +3,23 @@
 #include <memory>
 
 int main() {
-//    Laud laud("_______________"
-//              "_______________"
-//              "__J__________M_"
-//              "__Q___W___JUGA_"
-//              "__U_T_E___O__I_"
-//              "__K_U_S___T__N_"
-//              "__A_R_TAFTIL_E_"
-//              "__MXNGITA____N_"
-//              "__A_E_D_I____I_"
-//              "____E__________"
-//              "____D__________"
-//              "_______________"
-//              "_______________"
-//              "_______________"
-//              "_______________");
+    /*Laud laud("_______________"
+              "_______________"
+              "__J__________M_"
+              "__Q___W___JUGA_"
+              "__U_T_E___O__I_"
+              "__K_U_S___T__N_"
+              "__A_R_TAFTIL_E_"
+              "__MXNGITA____N_"
+              "__A_E_D_I____I_"
+              "____E__________"
+              "____D__________"
+              "_______________"
+              "_______________"
+              "_______________"
+              "_______________");
 
-    Laud laud{};
+    //Laud laud{};
 
 //    vector<shared_ptr<Ruut>> asi;
 //    for (int i{0}; i < 225; i++){
@@ -35,7 +35,7 @@ int main() {
 //    Laud laud(asi);
 
     cout << laud;
-
+    /*
     shared_ptr<Nupp> taht1 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht2 = make_shared<Nupp>('A', 1);
     shared_ptr<Nupp> taht3 = make_shared<Nupp>('B', 3);
@@ -79,6 +79,6 @@ int main() {
 
     cout << "vahetan 'e' uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(*(new vector<char>{'E'})) << "\n";
 
-
+    */
     return 0;
 }
