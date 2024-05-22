@@ -175,10 +175,13 @@ int Laud::leiaSonaLoppVeerus(int indeks) {
 
 // Laua ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Laud &laud) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int i{0}; i < 15; i++) {
         if (i < 9)
             os << ' ';
+//        SetConsoleTextAttribute(hConsole, static_cast<WORD>(i % 16));
         os << i + 1 << " | ";
+//        SetConsoleTextAttribute(hConsole, static_cast<WORD>(15));
 
         for (int j{0}; j < 15; j++) {
             short index = i * 15 + j;
@@ -296,7 +299,7 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
                 sona += m_mangulaud[praegune]->getNupp()->getTaht();
                 sonaPunktid += m_mangulaud[praegune]->getNupp()->getPunktid();
             }
-            // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
+                // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
             else if (kaik->kasIndeksOlemas(praegune)) {
                 // Veerus tekkiv sõna
                 teineSona = "";
@@ -378,7 +381,7 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             sona += m_mangulaud[praegune]->getNupp()->getTaht();
             sonaPunktid += m_mangulaud[praegune]->getNupp()->getPunktid();
         }
-        // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
+            // Kui leiame tähe hoopis käidavast sõnast mitte laualt (sest see on sealt tühi)
         else if (kaik->kasIndeksOlemas(praegune)) {
             // Reas tekkiv sõna
             teineSona = "";

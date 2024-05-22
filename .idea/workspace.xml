@@ -20,7 +20,23 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Parandasin veateateid" />
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Parandasin veateateid">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kuna.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kuna.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Ruut.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Ruut.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Laud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Laud.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mang.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mang.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ruut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ruut.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +129,7 @@
       <workItem from="1715697744066" duration="12175000" />
       <workItem from="1716379733528" duration="25000" />
       <workItem from="1716379775376" duration="4000" />
-      <workItem from="1716379798585" duration="1782000" />
+      <workItem from="1716379798585" duration="3603000" />
     </task>
     <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
       <option name="closed" value="true" />
@@ -179,7 +195,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716381522295</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Parandasin veateateid">
+      <option name="closed" value="true" />
+      <created>1716381622623</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716381622623</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Parandasin veateateid">
+      <option name="closed" value="true" />
+      <created>1716381812306</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716381812306</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
