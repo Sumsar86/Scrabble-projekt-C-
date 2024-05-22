@@ -19,5 +19,5 @@ public:
 
     bool static kasSona(string sona, int algus = 2);
 
-    int static kasTahtSobib(string taht, int algus = 2);
-};
+    //kontrollib, kas antud sõna algusele (algus) saab tähe taht lisada nii, et sellest saaks veel mingi korrektse sõna ehitada (vajadusel veel tähti lõppu lisades).
+    int static kasTahtSobib(string taht, int algus = 2); };
