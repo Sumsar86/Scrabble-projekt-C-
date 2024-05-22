@@ -9,8 +9,6 @@ include_directories(include/project)
 add_executable(Scrabble_projekt_C_
         include/project/Ruut.h
         src/Ruut.cpp
-        include/project/Scrabble.h
-        src/Scrabble.cpp
         include/project/Laud.h
         src/Laud.cpp
         include/project/Nupp.h

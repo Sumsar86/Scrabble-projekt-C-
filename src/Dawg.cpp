@@ -1,16 +1,16 @@
 #include <iostream>
 #include <fstream>
-#include <utility>
 #include <vector>
 #include <bitset>
 #include "Dawg.h"
 
 using namespace std;
 
-vector<int> Dawg::readIntegers(const string &failiNimi) {
-    ifstream input(failiNimi, ios::binary);
+// Loeb failist täisarve
+vector<int> Dawg::readIntegers(const string &faili_nimi) {
+    ifstream input(faili_nimi, ios::binary);
     if (!input.is_open()) {
-        cerr << "Error: Cannot open file " << failiNimi << '\n';
+        cerr << "Error: Cannot open file " << faili_nimi << '\n';
         return {};
     }
 
@@ -26,17 +26,20 @@ vector<int> Dawg::readIntegers(const string &failiNimi) {
     return integers;
 }
 
+// DAWG andmestruktuur staatilise vektori kujul
 vector<int> Dawg::m_dawg = Dawg::readIntegers("SonaList.dat");
 
 
 bool Dawg::kasLasteLopp(int tipp) {
-    if ((tipp & (1 << 28)) == 0) return false;
-    return true;
+    return (tipp & (1 << 28)) != 0;
+//    if ((tipp & (1 << 28)) == 0) return false;
+//    return true;
 }
 
 bool Dawg::kasSonaLopp(int tipp) {
-    if ((tipp & (1 << 29)) == 0) return false;
-    return true;
+    return (tipp & (1 << 29)) != 0;
+//    if ((tipp & (1 << 29)) == 0) return false;
+//    return true;
 }
 
 char Dawg::misTaht(int tipp) {
@@ -49,9 +52,8 @@ int Dawg::misLaps(int tipp) {
 
 string capitalizeAndReplace(string str) {
     // Capitalize the string
-    for (char &c : str) {
+    for (char &c: str)
         c = std::toupper(c);
-    }
 
     // Replace '&' with '$'
     size_t pos = 0;
@@ -71,16 +73,14 @@ string capitalizeAndReplace(string str) {
 bool Dawg::kasSona(string sona, int algus) {
     sona = capitalizeAndReplace(sona);
     for (int i{algus}; i < m_dawg.size(); i++) {
-        if (sona.length() > 1 && sona[0] == misTaht(m_dawg[i]) && kasSona(sona.substr(1), misLaps(m_dawg[i]) + 1)) {
+        if (sona.length() > 1 && sona[0] == misTaht(m_dawg[i]) && kasSona(sona.substr(1), misLaps(m_dawg[i]) + 1))
             return true;
-        }
-        if (sona.length() == 1 && sona[0] == misTaht(m_dawg[i]) && kasSonaLopp(m_dawg[i])) {
+        if (sona.length() == 1 && sona[0] == misTaht(m_dawg[i]) && kasSonaLopp(m_dawg[i]))
             return true;
-        }
         if (kasLasteLopp(m_dawg[i]))
             return false;
     }
-    cerr << "Ei leidnud sõnaraamatut.";
+    cerr << "Ei leidnud sõnaraamatut.\n";
     return false;
 }
 

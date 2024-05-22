@@ -1,7 +1,4 @@
-// Created by Martin on 28.04.2024.
-
-#ifndef SCRABBLE_PROJEKT_C__KOTT_H
-#define SCRABBLE_PROJEKT_C__KOTT_H
+#pragma once
 
 #include "Nupp.h"
 #include <map>
@@ -22,25 +19,23 @@ private:
     mt19937 m_rng;
     uniform_int_distribution<std::mt19937::result_type> m_juhuslik_arv;
 
-private:
-    void loo_juhuarvu_generaator();
-    void leia_nuppude_arv();
+    void looJuhuarvuGeneraator();
+
+    void leiaNuppudeArv();
 
 public:
     explicit Kott(map<shared_ptr<Nupp>, int> nupud);
 
     Kott();
 
-    shared_ptr<Nupp> getNupp();
+    shared_ptr<Nupp> getJuhuslikNupp();
 
-    shared_ptr<Nupp> vahetaNupp(const shared_ptr<Nupp>& vana_nupp);
+    shared_ptr<Nupp> vahetaNupp(const shared_ptr<Nupp> &vana_nupp);
 
     bool kas_on_tuhi() const;
+
     int getNuppudeArv() const;
 
     friend ostream &operator<<(ostream &os, const Kott &kott);
 
 };
-
-
-#endif //SCRABBLE_PROJEKT_C__KOTT_H

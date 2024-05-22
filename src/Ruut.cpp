@@ -1,39 +1,44 @@
-//
-// Created by Martin on 15.04.2024.
-//
-
 #include <iostream>
+#include "Ruut.h"
 #include <utility>
 
-#include "../include/project/Ruut.h"
-//testcomment
+// Ruudu konstruktor
+Ruut::Ruut(short sonakordaja, short tahekordaja) : mp_nupp(nullptr), m_sonakordaja(sonakordaja), m_tahekordaja(tahekordaja) {};
 
-Ruut::Ruut(short sonaKordaja, short taheKordaja) : m_nupp(nullptr), m_sonaKordaja(sonaKordaja),
-                                                                      m_taheKordaja(taheKordaja) {};
+// Ruudu konstruktor, mis võtab olemasoleva nupu endale aluseks
+Ruut::Ruut(shared_ptr<Nupp> nupp) : mp_nupp(std::move(nupp)), m_sonakordaja(1), m_tahekordaja(1){};
 
-Ruut::Ruut(shared_ptr<Nupp> nupp) : m_nupp(std::move(nupp)), m_sonaKordaja(1), m_taheKordaja(1){};
-
+// Ruudu kuvamiseks ekraanil
 ostream &operator<<(ostream &os, const Ruut &ruut) {
-    if (!ruut.m_nupp){
-        if (ruut.m_taheKordaja > 1) {
-            os << ruut.m_taheKordaja;
+    // Kui ruudule ei ole veel nuppu käidud
+    if (!ruut.mp_nupp){
+        // Kui ruudul on tähekordaja
+        if (ruut.m_tahekordaja > 1) {
+            os << ruut.m_tahekordaja;
             return os;
         }
-        if (ruut.m_sonaKordaja > 1) {
-            os << ruut.m_sonaKordaja;
+        // Kui ruudul on sõnakordaja
+        if (ruut.m_sonakordaja > 1) {
+            os << ruut.m_sonakordaja;
             return os;
         }
+        // Kui ruut on täiesti tühi (ehk kõik kordajad on ühed)
         os << "_";
         return os;
     }
+    // Kui ruudul on nupp, siis kordajaid ei kuvata
     os << *(ruut.getNupp());
     return os;
 }
 
+// Kas ruudule on nupp asetatud
 bool Ruut::kasTyhi() {
-    return !m_nupp;
+    return !mp_nupp;
 }
 
+// Tagastab enale asetatud nupu
 const shared_ptr<Nupp> &Ruut::getNupp() const {
-    return m_nupp;
+    if (!mp_nupp)
+        cerr << "Ruudul pole nuppu! Tagastan nullptr.\n";
+    return mp_nupp;
 }

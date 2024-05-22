@@ -1,5 +1,4 @@
-#ifndef SCRABBLE_PROJEKT_C__DAWG_H
-#define SCRABBLE_PROJEKT_C__DAWG_H
+#pragma once
 
 using namespace std;
 
@@ -16,13 +15,9 @@ private:
     static int misLaps(int tipp);
 
 public:
-    Dawg(string failiNimi);
-
-    static vector<int> readIntegers(const string &failiNimi);
+    static vector<int> readIntegers(const string &faili_nimi);
 
     bool static kasSona(string sona, int algus = 2);
 
     int static kasTahtSobib(string taht, int algus = 2);
 };
-
-#endif //SCRABBLE_PROJEKT_C__DAWG_H

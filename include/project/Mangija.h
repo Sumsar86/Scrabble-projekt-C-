@@ -1,9 +1,4 @@
-//
-// Created by rasmu on 29.04.2024.
-//
-
-#ifndef SCRABBLE_PROJEKT_C__MANGIJA_H
-#define SCRABBLE_PROJEKT_C__MANGIJA_H
+#pragma once
 
 #include <memory>
 #include <utility>
@@ -13,7 +8,7 @@
 
 class Mangija {
 private:
-    std::shared_ptr<Kott> mp_kott;
+    shared_ptr<Kott> mp_kott;
     Kuna m_kuna;
     int m_punktid;
 
@@ -24,6 +19,3 @@ public:
 
     friend ostream &operator<<(ostream &os, const Mangija &mangija);
 };
-
-
-#endif //SCRABBLE_PROJEKT_C__MANGIJA_H

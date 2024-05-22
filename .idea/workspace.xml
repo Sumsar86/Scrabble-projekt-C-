@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="Scrabble_projekt_C_" targetName="Scrabble_projekt_C_" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Parandasin tekkinud vead">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Dawg.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Dawg.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kaik.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kaik.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kott.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kott.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kuna.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kuna.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Laud.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Laud.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Mang.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mang.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Mangija.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mangija.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Ruut.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Ruut.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Scrabble.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dawg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dawg.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kaik.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kaik.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kott.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kott.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kuna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kuna.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Laud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Laud.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nupp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nupp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ruut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ruut.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scrabble.cpp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sumsar86&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sumsar86/Scrabble-projekt-C-&quot;,
+    &quot;accountId&quot;: &quot;2227d171-bc51-4a5a-9d94-3e3412c55b76&quot;
+  }
+}</component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="1" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2gQ2dxRKfm0w5bM0DOFx25MFAIo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "CMake Application.Scrabble_projekt_C_.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/rasmus/Programmid/C++/UT/Programmeerimine keeles C++/Grupitöö",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Scrabble_projekt_C_" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Scrabble_projekt_C_" TARGET_NAME="Scrabble_projekt_C_" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Scrabble_projekt_C_" RUN_TARGET_NAME="Scrabble_projekt_C_">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="" />
+      <created>1715615588040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715615588040</updated>
+      <workItem from="1715615604368" duration="1130000" />
+      <workItem from="1715616875009" duration="834000" />
+      <workItem from="1715697744066" duration="11897000" />
+    </task>
+    <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
+      <option name="closed" value="true" />
+      <created>1715616380575</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715616380575</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Eemaldasin Dawg2.cpp 2">
+      <option name="closed" value="true" />
+      <created>1715616459226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715616459226</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ei teinud midagi">
+      <option name="closed" value="true" />
+      <created>1715697857107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715697857108</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Lisasin kommentaare ja parandasin veidi koodi. Kõikjal">
+      <option name="closed" value="true" />
+      <created>1715707035384</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715707035384</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Parandasin tekkinud vead">
+      <option name="closed" value="true" />
+      <created>1715708446282</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715708446282</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Eemaldasin Dawg2.cpp" />
+    <MESSAGE value="Eemaldasin Dawg2.cpp 2" />
+    <MESSAGE value="Ei teinud midagi" />
+    <MESSAGE value="Lisasin kommentaare ja parandasin veidi koodi. Kõikjal" />
+    <MESSAGE value="Parandasin tekkinud vead" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parandasin tekkinud vead" />
+  </component>
+</project>
