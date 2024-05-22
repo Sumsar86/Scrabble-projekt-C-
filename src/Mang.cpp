@@ -67,7 +67,7 @@ int main() {
 
     vector<char> vahetatavad_tahed{'U', 'A', 'E'};
     cout << "vahetan {";
-    for_each(vahetatavad_tahed.begin(), vahetatavad_tahed.end(), [](const char& taht){cout << taht << " ";});
+    for_each(vahetatavad_tahed.begin(), vahetatavad_tahed.end(), [](const char& taht){cout << taht << ", ";});
     cout << "} uue tähe vastu, kas õnnestus kõik ära vahetada: " << boolalpha << m.vahetaNupud(vahetatavad_tahed) << "\n";
 
     cout << m << "\n\n";

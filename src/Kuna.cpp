@@ -31,15 +31,15 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     if (kott->getNuppudeArv() < 7 || tahed.size() > 7)
         return false;
 
-    vector<shared_ptr<Nupp>> nupud;
+    vector<pair<shared_ptr<Nupp>, char>> nupud;
     for (const char &taht: tahed)
-        nupud.push_back(kasSisaldabNuppu(taht));
+        nupud.emplace_back(kasSisaldabNuppu(taht), taht);
 
     bool vastus{true};
     for (int i = 0; i < nupud.size(); i++) {
         // Kui nuppu ei olnud künal
-        if (nupud[i] == nullptr) {
-            cerr << "Nupp ei ole künal!\n";
+        if (nupud[i].first == nullptr) {
+            cerr << "Nupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
             vastus = false;
             continue;
         }
@@ -48,7 +48,7 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
                 m_nupud.erase(m_nupud.begin() + j);
                 break;
             }
-        m_nupud.push_back(kott->vahetaNupp(nupud[i]));
+        m_nupud.push_back(kott->vahetaNupp(nupud[i].first));
     }
 
     if (!vastus)

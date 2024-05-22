@@ -82,10 +82,10 @@ void Kott::looJuhuarvuGeneraator() {
 
 // Koti ekraanile kuvamiseks.
 ostream &operator<<(ostream &os, const Kott &kott) {
-    os << "Kott: nuppude arv kotis = " << kott.m_nuppude_arv << ",\n";
+    os << "Kott: nuppude arv kotis = " << kott.m_nuppude_arv << ",\n{";
     for (const auto &it: kott.m_nupud)
-        os << "    " << *it.first << ": " << it.second << "\n";
-    return os;
+        os << " " << *it.first << ": " << it.second << ", ";
+    return os << "}";
 }
 
 // Arvutab kotis olevate nuppude arvu ja salvestab selle privaatsesse muutujasse m_nuppude_arv.
