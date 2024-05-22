@@ -1,0 +1,4 @@
+"C:\Users\Martin\AppData\Local\JetBrains\CLion 2023.3.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Users/Martin/AppData/Local/JetBrains/CLion 2023.3.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Martin\CLionProjects\Scrabble-projekt-C- -B C:\Users\Martin\CLionProjects\Scrabble-projekt-C-\cmake-build-debug
+-- Configuring done (2.8s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/Martin/CLionProjects/Scrabble-projekt-C-/cmake-build-debug

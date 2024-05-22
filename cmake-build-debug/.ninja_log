@@ -1,0 +1,20 @@
+# ninja log v5
+15	2676	7374093894983485	CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj	b28111030dda7373
+39	876	7367151652849551	CMakeFiles/Scrabble_projekt_C_.dir/src/Scrabble.cpp.obj	cdd786210a01bafc
+3	1867	7380257111954856	build.ninja	ca79ec1775c6f245
+15	1611	7374088666858264	CMakeFiles/Scrabble_projekt_C_.dir/src/Nupp.cpp.obj	ef30b2e46a32867c
+40	6809	7374099610816824	CMakeFiles/Scrabble_projekt_C_.dir/src/Mang.cpp.obj	d46a5aca7c32ab05
+16	8007	7374099622984607	CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj	445835bde654b2a
+8008	9100	7374099633845552	Scrabble_projekt_C_.exe	e7df03adfd32e229
+45	8016	7374035387761466	CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj	92e6605a5e8ea0d1
+12058	18088	7374035488544306	CMakeFiles/Scrabble_projekt_C_.dir/src/Kuna.cpp.obj	b21c874c449d23c1
+46	6740	7367369130672058	CMakeFiles/DAWG.dir/C_/Users/Martin/CLionProjects/DAWG/Dawg.cpp.obj	7834a4d5c6e20858
+4090	5014	7367369920541291	libDAWG.a	2c0a9b472c58fd14
+70	4436	7367151688374157	CMakeFiles/DAWG.dir/src/Kaik.cpp.obj	6a136b5891e8bc80
+44	12783	7374035746740478	CMakeFiles/Scrabble_projekt_C_.dir/src/Mangija.cpp.obj	644ff2db809b803e
+63	5781	7374048935254644	CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj	9ca88871af965c6e
+33	4088	7367369911482939	CMakeFiles/DAWG.dir/C_/Users/Martin/CLionProjects/DAWG/Dawg2.cpp.obj	e3e320f02c72115d
+15	13410	7373183948393721	CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj	74c11009cc003290
+27	6840	7380836295687897	CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj	74c11009cc003290
+17	9209	7380836319005550	CMakeFiles/Scrabble_projekt_C_.dir/src/Laud.cpp.obj	445835bde654b2a
+9210	11225	7380836340249351	Scrabble_projekt_C_.exe	e7df03adfd32e229
