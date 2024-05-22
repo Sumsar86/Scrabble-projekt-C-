@@ -69,6 +69,7 @@ string capitalizeAndReplace(string str) {
 // Kontrollib, kas käidud sõna on korrektne sõna.
 // dawg on graaf, algus on rekursiooni jaoks esimene indeks, esimest korda panna
 // selle väärtuseks 2, sona on otsitav sõna
+
 bool Dawg::kasSona(string sona, int algus) {
     sona = capitalizeAndReplace(sona);
     for (int i{algus}; i < m_dawg.size(); i++) {
@@ -81,6 +82,22 @@ bool Dawg::kasSona(string sona, int algus) {
     }
     cerr << "Ei leidnud sõnaraamatut.\n";
     return false;
+}
+
+//tagastab -1, kui vastav täht ei saa üldse järgneda;
+//tagastab muul juhul lapse indeksi.
+int Dawg::kasTahtSobib(string taht, int algus){
+    if (taht.size() != 1){
+        throw invalid_argument("kasTahtSobib esimene argument peab olema ühe char pikkune!\n");
+    }
+    taht = capitalizeAndReplace(taht);
+    for (int i{algus}; i < m_dawg.size(); i++) {
+        if (taht == to_string(misTaht(m_dawg[i])))
+            return i;
+        if (kasLasteLopp(m_dawg[i]))
+            return -1;
+    }
+    return -1;
 }
 
 // ÕÄÖÜŠŽ = QXCY$W
