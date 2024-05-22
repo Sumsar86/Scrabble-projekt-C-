@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <ostream>
+#include <windows.h>
 #include "string"
 #include "Nupp.h"
 
