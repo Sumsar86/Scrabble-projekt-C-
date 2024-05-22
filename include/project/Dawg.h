@@ -21,6 +21,8 @@ public:
     static vector<int> readIntegers(const string &failiNimi);
 
     bool static kasSona(string sona, int algus = 2);
+
+    int static kasTahtSobib(string taht, int algus = 2);
 };
 
 #endif //SCRABBLE_PROJEKT_C__DAWG_H
