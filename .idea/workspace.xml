@@ -20,19 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Parandasin leitud vigu. Lisasin KÕIK puuduvad kommentaarid. ühtlustasin KOGU PROJEKTI stiili.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kott.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kott.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kuna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kuna.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mang.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mang.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Parandasin veateateid" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +113,7 @@
       <workItem from="1715697744066" duration="12175000" />
       <workItem from="1716379733528" duration="25000" />
       <workItem from="1716379775376" duration="4000" />
-      <workItem from="1716379798585" duration="1605000" />
+      <workItem from="1716379798585" duration="1782000" />
     </task>
     <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
       <option name="closed" value="true" />
@@ -175,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715710027896</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Parandasin veateateid">
+      <option name="closed" value="true" />
+      <created>1716381449287</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716381449287</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Parandasin veateateid">
+      <option name="closed" value="true" />
+      <created>1716381522295</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716381522295</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +208,7 @@
     <MESSAGE value="Lisasin kommentaare ja parandasin veidi koodi. Kõikjal" />
     <MESSAGE value="Parandasin tekkinud vead" />
     <MESSAGE value="Parandasin leitud vigu. Lisasin KÕIK puuduvad kommentaarid. ühtlustasin KOGU PROJEKTI stiili." />
-    <option name="LAST_COMMIT_MESSAGE" value="Parandasin leitud vigu. Lisasin KÕIK puuduvad kommentaarid. ühtlustasin KOGU PROJEKTI stiili." />
+    <MESSAGE value="Parandasin veateateid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parandasin veateateid" />
   </component>
 </project>
