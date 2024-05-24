@@ -1,11 +1,12 @@
 #pragma once
 
-#include "Nupp.h"
 #include <map>
 #include <ostream>
 #include <utility>
 #include <random>
 #include <chrono>
+#include <iostream>
+#include "Nupp.h"
 
 using namespace std;
 

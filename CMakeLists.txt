@@ -25,4 +25,5 @@ add_executable(Scrabble_projekt_C_
         src/Dawg.cpp
         include/project/Kaik.h
         src/Kaik.cpp
+        include/project/Konstandid.h
 )

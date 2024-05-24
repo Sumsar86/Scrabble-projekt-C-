@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Kuna.h"
 
 // Konstruktor, mis loob uue Küna, võttes kotist juhuslikult max_arv_nuppe arvu nuppe.
@@ -9,7 +8,7 @@ Kuna::Kuna(short max_arv_nuppe, const shared_ptr<Kott> &kott) : m_max_arv_nuppe(
 
 // Küna ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Kuna &kuna) {
-    os << "max arv nuppe: " << kuna.m_max_arv_nuppe << ", nupud: ";
+    os << "nupud: ";
     for (const auto &it: kuna.m_nupud)
         os << *it << ", ";
     return os;
@@ -28,8 +27,14 @@ shared_ptr<Nupp> Kuna::kasSisaldabNuppu(const char &taht) {
 // Nupu/nuppude künal välja vahetamiseks
 bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     // Kui kotis on vähem kui seitse nuppu või tahetakse üle 7 nupu korraga vahetada
-    if (kott->getNuppudeArv() < 7 || tahed.size() > 7)
+    if (tahed.size() > 7) {
+        cerr << "\nSaad vahetada kuni 7 tähte!\n";
         return false;
+    }
+    if (kott->getNuppudeArv() < 7) {
+        cerr << "\nKotis on alla 7 tähe.";
+        return false;
+    }
 
     vector<pair<shared_ptr<Nupp>, char>> nupud;
     for (const char &taht: tahed)
@@ -39,7 +44,7 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     for (int i = 0; i < nupud.size(); i++) {
         // Kui nuppu ei olnud künal
         if (nupud[i].first == nullptr) {
-            cerr << "Nupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
+            cerr << "\nNupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
             vastus = false;
             continue;
         }
@@ -52,7 +57,45 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     }
 
     if (!vastus)
-        cerr << "Kõiki nuppe ei õnnestunud välja vahetada!\n";
+        cerr << "\nKõiki nuppe ei õnnestunud välja vahetada!\n";
     // Kas kõik tähed said vahetatud.
     return vastus;
+}
+
+int Kuna::mituNuppuKunal() const {
+    return m_nupud.size();
+}
+
+short Kuna::getMaxArvNuppeKunal() const {
+    return m_max_arv_nuppe;
+}
+
+void Kuna::lisaNupp(const shared_ptr<Nupp> &nupp) {
+    m_nupud.push_back(nupp);
+}
+
+bool Kuna::kasSisaldabKaiku(const shared_ptr<Kaik> &kaik) {
+    map<char, int> nupud;
+//    cout << "3\n";
+    for_each(m_nupud.begin(), m_nupud.end(), [&nupud](auto el) { ++nupud[el->getTaht()]; });
+//    cout << "4\n";
+    for (const auto& k : kaik->getKaik()) {
+//        cout << *k.second << " " << nupud[k.second->getTaht()] << " ";
+        --nupud[k.second->getTaht()];
+//        cout << nupud[k.second->getTaht()] << "\n";
+    }
+//    for_each(kaik->getKaik().begin(), kaik->getKaik().end(), [&nupud](auto el) { --nupud[el.second->getTaht()]; });
+//    cout << "5\n";
+    return !any_of(nupud.begin(), nupud.end(), [](auto el) { return el.second < 0; });
+}
+
+void Kuna::eemaldaNupud(const shared_ptr<Kaik> &kaik) {
+    for (const auto& k: kaik->getKaik()) {
+        for (int i = 0; i < m_nupud.size(); i++) {
+            if (m_nupud[i]->getTaht() == k.second->getTaht()) {
+                m_nupud.erase(m_nupud.begin() + i);
+            }
+        }
+    }
+
 }

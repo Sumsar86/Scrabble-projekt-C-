@@ -1,8 +1,17 @@
 #include "Mang.h"
-#include "Mangija.h"
-#include <memory>
 
+
+// Kui uus sõna panna rea lõppu, kas see läheb järgmisele reale
 int main() {
+    Mang m{};
+    m.jargmineKaik();
+
+//    string koordinaadid{"c2"};
+//    int x = toupper(koordinaadid[0]) - 65;
+//    int y = stoi(koordinaadid.substr(1, koordinaadid.size() - 1)) - 1;
+//    int indeks = y * 15 + x;
+//    cout << "x: " << x << ", y:" << y << ", i: " << indeks << "\n";
+
 //    Laud laud("_______________"
 //              "_______________"
 //              "__J__________M_"
@@ -19,7 +28,7 @@ int main() {
 //              "_______________"
 //              "_______________");
 
-    Laud laud{};
+//    Laud laud{};
 
 //    vector<shared_ptr<Ruut>> asi;
 //    for (int i{0}; i < 225; i++){
@@ -34,7 +43,7 @@ int main() {
 //    }
 //    Laud laud(asi);
 
-    cout << laud;
+//    cout << laud;
 
 //    shared_ptr<Nupp> taht1 = make_shared<Nupp>('A', 1);
 //    shared_ptr<Nupp> taht2 = make_shared<Nupp>('A', 1);

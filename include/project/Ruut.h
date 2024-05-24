@@ -1,9 +1,11 @@
 #pragma once
 
+//#include <windows.h>
 #include <memory>
 #include <ostream>
-#include <windows.h>
-#include "string"
+#include <iostream>
+#include <utility>
+#include <string>
 #include "Nupp.h"
 
 using namespace std;
@@ -15,6 +17,7 @@ private:
     short m_tahekordaja;
 public:
     Ruut(short sonakordaja, short tahekordaja);
+
     Ruut(shared_ptr<Nupp> nupp);
 
     bool kasTyhi();
