@@ -1,10 +1,6 @@
 #pragma once
 
 #include <memory>
-#include <ostream>
-#include <iostream>
-#include <utility>
-#include <string>
 #include "Nupp.h"
 
 using namespace std;

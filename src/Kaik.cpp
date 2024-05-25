@@ -44,7 +44,9 @@ bool Kaik::yhesReas() {
     for (auto it = m_kaik.begin(); ++it != m_kaik.end();) {
         --it;
         if (it->first >= 225 || it->first < 0) {
-            cerr << "\nNupp läheb laualt välja!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nNupp läheb laualt välja!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             return false;
         }
         if ((it->first / 15) != ((++it)->first / 15))
@@ -60,7 +62,9 @@ bool Kaik::yhesVeerus() {
     for (auto it = m_kaik.begin(); ++it != m_kaik.end();) {
         --it;
         if (it->first >= 225 || it->first < 0) {
-            cerr << "\nNupp läheb laualt välja!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nNupp läheb laualt välja!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             return false;
         }
         if ((it->first % 15) != ((++it)->first % 15))
@@ -105,7 +109,9 @@ shared_ptr<Nupp> Kaik::getNupp(int indeks) {
     if (find(indeksid.begin(), indeksid.end(), indeks) != indeksid.end())
         return m_kaik[indeks];
 
-    cerr << "Viga! Ei leidnud nuppu: indeks = " << indeks << '\n';
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+    cout << "Viga! Ei leidnud nuppu: indeks = " << indeks << '\n';
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
     return nullptr;
 }
 

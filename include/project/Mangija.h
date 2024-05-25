@@ -1,12 +1,6 @@
 #pragma once
 
-#include <memory>
-#include <utility>
-#include <ostream>
-#include <iostream>
 #include "Kuna.h"
-//#include "Kott.h"
-//#include "Kaik.h"
 
 class Mangija {
 private:

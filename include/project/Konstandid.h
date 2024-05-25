@@ -1,9 +1,13 @@
 #pragma once
 
+#define WIN32_LEAN_AND_MEAN  // windows.h on imelik
+#include <windows.h>
 #include <set>
 #include <map>
 
 using namespace std;
+
+const static HANDLE H_CONSOLE = GetStdHandle(STD_OUTPUT_HANDLE);
 
 // Erinevate ruutude sõna- ja tähekordajad laual
 const static set<short> KAHEKORDSED_TAHED = {3, 11, 36, 38, 45, 52, 59, 92, 96, 98, 102, 108, 116, 122, 126, 128, 132, 165,

@@ -109,13 +109,13 @@ int Laud::leiaSonaLoppVeerus(int indeks) {
 // Laua ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Laud &laud) {
     os << "\n";
-//    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int i{0}; i < 15; i++) {
         if (i < 9)
             os << ' ';
-//        SetConsoleTextAttribute(hConsole, static_cast<WORD>(i % 16));
-        os << i + 1 << " | ";
-//        SetConsoleTextAttribute(hConsole, static_cast<WORD>(15));
+        os << i + 1;
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        os << " | ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
 
         for (int j{0}; j < 15; j++) {
             short index = i * 15 + j;
@@ -123,7 +123,9 @@ ostream &operator<<(ostream &os, const Laud &laud) {
         }
         os << '\n';
     }
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
     os << "   +---------------------------------------------\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
     os << "      A  B  C  D  E  F  G  H  I  J  K  L  M  N  O\n";
     return os << "\n";
 }
@@ -132,12 +134,18 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 // Kui sõna pole olemas tagastab -1.
 int Laud::kontrolli(const shared_ptr<Kaik> &kaik) {
     if (!kontrolliPos(kaik)) {
-        cerr << "\nSõna positsioon on vale!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSõna positsioon on vale!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return -1;
     }
     int tulemus = kontrolliSonu(kaik);
-    if (tulemus < 0)
-        cerr << "\nSõna pole sõnastikus!";
+    if (tulemus < 0) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSõna pole sõnastikus!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+    }
+
     return tulemus;
 }
 
@@ -148,7 +156,9 @@ bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
     int indeks, viimane;
     // Käik pole sirges reas ega veerus
     if (!(onReas || onVeerus)) {
-        cerr << "\nEi ole reas ega veerus!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nEi ole reas ega veerus!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
@@ -181,7 +191,9 @@ bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
     if (kasEsimeneKaik()) {
         // Kui käigus pole nuppu, mis asetatakse laua keskmisele ruudule
         if (!(kaik->kasIndeksOlemas(m_mangulaud.size() / 2))) {
-            cerr << "\nEsimene käik tuleb käia läbi keskmise ruudu!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nEsimene käik tuleb käia läbi keskmise ruudu!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             return false;
         }
         return true;

@@ -1,10 +1,5 @@
 #pragma once
 
-#include <vector>
-#include <memory>
-#include <iostream>
-#include <ostream>
-//#include "Nupp.h"
 #include "Kott.h"
 #include "Laud.h"
 

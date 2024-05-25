@@ -1,10 +1,6 @@
 #pragma once
 
-#include <memory>
-#include <iostream>
-#include <ranges>
 #include "Mangija.h"
-//#include "Laud.h"
 
 using namespace std;
 

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <bitset>
+//#include <bitset>
 
 using namespace std;
 

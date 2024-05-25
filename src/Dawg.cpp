@@ -76,7 +76,7 @@ bool Dawg::kasSona(string sona, int algus) {
         if (kasLasteLopp(m_dawg[i]))
             return false;
     }
-    cerr << "Ei leidnud sõnaraamatut.\n";
+    cout << "Ei leidnud sõnaraamatut.\n";
     return false;
 }
 

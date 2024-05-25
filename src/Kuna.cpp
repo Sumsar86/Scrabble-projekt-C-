@@ -8,9 +8,14 @@ Kuna::Kuna(short max_arv_nuppe, const shared_ptr<Kott> &kott) : m_max_arv_nuppe(
 
 // Küna ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Kuna &kuna) {
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     os << "nupud: ";
-    for (const auto &it: kuna.m_nupud)
-        os << *it << ", ";
+    for (const auto &it: kuna.m_nupud) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        os << *it;
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        os << ", ";
+    }
     return os;
 }
 
@@ -28,11 +33,15 @@ shared_ptr<Nupp> Kuna::kasSisaldabNuppu(const char &taht) {
 bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     // Kui kotis on vähem kui seitse nuppu või tahetakse üle 7 nupu korraga vahetada
     if (tahed.size() > 7) {
-        cerr << "\nSaad vahetada kuni 7 tähte!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSaad vahetada kuni 7 tähte!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
     if (kott->getNuppudeArv() < 7) {
-        cerr << "\nKotis on alla 7 tähe.";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nKotis on alla 7 tähe.";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
@@ -44,10 +53,12 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     for (int i = 0; i < nupud.size(); i++) {
         // Kui nuppu ei olnud künal
         if (nupud[i].first == nullptr) {
-            cerr << "\nKüna: ";
-            for (const auto& n : m_nupud)
-                cerr << *n << ", ";
-            cerr << "\nNupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nKüna: ";
+            for (const auto &n: m_nupud)
+                cout << *n << ", ";
+            cout << "\nNupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             vastus = false;
             continue;
         }
@@ -59,8 +70,11 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
         m_nupud.push_back(kott->vahetaNupp(nupud[i].first));
     }
 
-    if (!vastus)
-        cerr << "\nKõiki nuppe ei õnnestunud välja vahetada!\n";
+    if (!vastus) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nKõiki nuppe ei õnnestunud välja vahetada!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+    }
     // Kas kõik tähed said vahetatud.
     return vastus;
 }

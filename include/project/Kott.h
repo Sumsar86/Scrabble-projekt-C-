@@ -1,11 +1,7 @@
 #pragma once
 
-#include <map>
-#include <ostream>
-#include <utility>
 #include <random>
 #include <chrono>
-#include <iostream>
 #include "Nupp.h"
 
 using namespace std;

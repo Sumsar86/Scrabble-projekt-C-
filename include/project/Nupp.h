@@ -1,8 +1,8 @@
 #pragma once
 
-#include <ostream>
-#include <string>
-#include <map>
+#include <iostream>
+//#include <map>
+#include "Konstandid.h"
 
 using namespace std;
 

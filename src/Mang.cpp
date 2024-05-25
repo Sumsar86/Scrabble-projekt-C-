@@ -1,6 +1,5 @@
 #include "Mang.h"
 
-
 // Kui uus sõna panna rea lõppu, kas see läheb järgmisele reale
 int main() {
     Mang mang{};
@@ -23,15 +22,33 @@ Mang::Mang() : m_kott(make_shared<Kott>()),
 }
 
 void Mang::jargmineKaik(const shared_ptr<Mangija> &mangija) {
-    cout << m_laud << "\n";
-    cout << *mangija << "\n";
+    cout << m_laud;
+    cout << *mangija << "\n\n";
 
     bool oige_vastus = false;
     string vastus;
 
     while (true) {
-        cout << "Sinu kord: " << mangija->getNimi()
-             << "\nKas sa soovid käia sõna (S), käigu vahele jätta (J) või künalt tähti vahetada (V)? ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "Sinu kord: ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << mangija->getNimi();
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "\nKas sa soovid käia sõna (";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "S";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "), käigu vahele jätta (";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "J";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << ") või künalt tähti vahetada (";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "V";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << ")? ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+
         getline(cin, vastus);
         switch (toupper(vastus.c_str()[0])) {
             case 'S':
@@ -52,7 +69,9 @@ void Mang::jargmineKaik(const shared_ptr<Mangija> &mangija) {
                 oige_vastus = true;
                 break;
             default:
-                cerr << "\nVale sisend!\n";
+                SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+                cout << "\nVale sisend!\n";
+                SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         }
         if (oige_vastus)
             break;
@@ -67,13 +86,17 @@ string Mang::kysiMangijateArv() {
     string mangijate_arv;
     while (true) {
         try {
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
             cout << "Sisesta mängijate arv: ";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             getline(cin, mangijate_arv);
             if (stoi(mangijate_arv) < 1 || stoi(mangijate_arv) > 4)
                 throw invalid_argument("Arv ei sobi!");
             break;
         } catch (exception e) {
-            cerr << "\nSisesta täisarv vahemikus 1--4!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nSisesta täisarv vahemikus 1 kuni 4!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             continue;
         }
     }
@@ -83,7 +106,10 @@ string Mang::kysiMangijateArv() {
 void Mang::kysiMangijateNimed(int mangijate_arv) {
     string nimi;
     for (int i = 0; i < mangijate_arv; i++) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
         cout << "Sisesta mängija nimi: ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+
         getline(cin, nimi);
         m_mangijad[i] = make_shared<Mangija>(m_kott, nimi);
     }
@@ -92,7 +118,12 @@ void Mang::kysiMangijateNimed(int mangijate_arv) {
 string Mang::kysiKoordinaadid() {
     string koordinaadid;
     while (true) {
-        cout << "Sisesta esimese tähe koordinaadid (A1): ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "Sisesta esimese tähe koordinaadid (näiteks: ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "A1";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "): ";
         getline(cin, koordinaadid);
         if (toupper(koordinaadid[0]) < 'A' ||
             toupper(koordinaadid[0]) > 'O' ||
@@ -102,7 +133,9 @@ string Mang::kysiKoordinaadid() {
             koordinaadid[1] - 48 != 1 &&
             (koordinaadid[2] - 48 < 0 ||
              koordinaadid[2] - 48 > 5)) {
-            cerr << "\nKoordinaat on vale!\n";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nKoordinaat on vale!\n";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             continue;
         }
         break;
@@ -113,11 +146,22 @@ string Mang::kysiKoordinaadid() {
 string Mang::kysiSuund() {
     string suund;
     while (true) {
-        cout << "Sisesta suund (alla - A, paremale - P): ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "Sisesta suund (alla - ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "A";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << ", paremale - ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "P";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << "): ";
         getline(cin, suund);
         if (suund != "A" && suund != "P" &&
             suund != "a" && suund != "p") {
-            cerr << "\nSuund on vale!\n";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nSuund on vale!\n";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             continue;
         }
         break;
@@ -126,7 +170,12 @@ string Mang::kysiSuund() {
 }
 
 string Mang::kysiSona() {
-    cout << "Sisesta käidav sõna, kui see ristub laual oleva sõnaga, märgi laual juba olevad tähed tärniga (*): ";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << "Sisesta käidav sõna, kui see ristub laual oleva sõnaga, märgi laual juba olevad tähed tärniga (";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << "*";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << "): ";
     string sona;
     getline(cin, sona);
     return sona;
@@ -144,22 +193,37 @@ bool Mang::kaiSona(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
     try {
         kaik = make_shared<Kaik>(vastus, koordinaadid, suund);
     } catch (const invalid_argument &e) {
-        cerr << "\nSõna positsioon ei ole korrektne!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSõna positsioon ei ole korrektne!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
     if (!mangija->kasNupudKunal(kaik)) {
-        cerr << "\nKõiki nuppe pole künal!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nKõiki nuppe pole künal!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
     int tulemus = m_laud.kontrolli(kaik);
     if (tulemus < 0) {
-        cerr << "\nSelle sõna paigutus on vale või seda sõna pole sõnastikus!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSelle sõna paigutus on vale või seda sõna pole sõnastikus!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
-    cout << "Sinu käidud sõna (" << vastus << ") eest saadud punktid: " << tulemus << ".\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << "\nSinu käidud sõna (";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << vastus;
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << ") eest saadud punktid: ";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << tulemus;
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << ".\n";
 
     mangija->lisaPunktid(tulemus);
 
@@ -170,16 +234,22 @@ bool Mang::kaiSona(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
     mangija->taidaKuna();
 
     cout << m_laud << "\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     cout << "Uus küna: " << *mangija->getKuna() << "\n";
 
     return true;
 }
 
 void Mang::jataVahele(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
-    cout << "\n" << mangija->getNimi() << ", jätsid oma käigu vahele.\n";
+    cout << "\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << mangija->getNimi();
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << ", jätsid oma käigu vahele.\n";
 }
 
 bool Mang::vahetaTahti(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     cout << "Sisesta vahetatavad tähed kokku kirjutatuna: ";
     string vahetatavad_tahed;
     getline(cin, vahetatavad_tahed);
@@ -193,11 +263,14 @@ bool Mang::vahetaTahti(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
 
     if (!mangija->vahetaNupud(tahed)) {
         tahed.clear();
-        cerr << "\nNuppe ei õnnestunud vahetada.\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nNuppe ei õnnestunud vahetada.\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
     tahed.clear();
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     cout << "Uus küna: " << *mangija->getKuna() << "\n";
     return true;
 }
@@ -215,7 +288,12 @@ bool Mang::kasMangLabi(const shared_ptr<Mangija> &mangija) {
 }
 
 void Mang::lopetaMang(const shared_ptr<Mangija> &mangija) {
-    cout << "\n<~~~~~~~~~~~~~~~| Mäng sai läbi |~~~~~~~~~~~~~~~>\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << "\n<~~~~~~~~~~~~~~~| ";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << "Mäng sai läbi";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << " |~~~~~~~~~~~~~~~>\n";
 
     int mangija_kaotatud_punktid;
     if (m_vahele_jaetud_kaikude_arv != 0) {
@@ -223,9 +301,14 @@ void Mang::lopetaMang(const shared_ptr<Mangija> &mangija) {
             mangija_kaotatud_punktid = p.second->getKuna()->kunaNuppudePunktid();
             p.second->eemaldaPunktid(mangija_kaotatud_punktid);
         }
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
         cout << "\nKahe vooru jooksul pole ükski mängija käiku teinud.\n";
         trykiTulemused();
-        cout << "\n<~~~~~~~~~~~~~| Aitäh mängimast! |~~~~~~~~~~~~~~>\n";
+        cout << "\n<~~~~~~~~~~~~~| ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << "Aitäh mängimast!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+        cout << " |~~~~~~~~~~~~~~>\n";
         return;
     }
 
@@ -239,11 +322,21 @@ void Mang::lopetaMang(const shared_ptr<Mangija> &mangija) {
     }
     mangija->lisaPunktid(teiste_mangijate_punktid);
 
-    cout << "\nMängijal " + mangija->getNimi() + " said nupud otsa.\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << "\nMängijal ";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << mangija->getNimi();
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << " said nupud otsa.\n";
 
     trykiTulemused();
 
-    cout << "\n<~~~~~~~~~~~~~| Aitäh mängimast! |~~~~~~~~~~~~~~>\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << "\n<~~~~~~~~~~~~~| ";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << "Aitäh mängimast!";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout << " |~~~~~~~~~~~~~~>\n";
 }
 
 void Mang::trykiTulemused() {
@@ -252,6 +345,7 @@ void Mang::trykiTulemused() {
               [](const auto &p) { return p.second; });
     sort(mangijad.begin(), mangijad.end());
 
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     cout << "\nTulemused on järgnevad:\n";
     for_each(mangijad.begin(), mangijad.end(), [](const auto &el) {
         cout << "  " << *el << "\n";

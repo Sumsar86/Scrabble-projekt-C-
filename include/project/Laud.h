@@ -1,15 +1,7 @@
 #pragma once
 
-//#include <windows.h>
-#include <ostream>
-#include <vector>
-#include <set>
-#include <iostream>
-#include <algorithm>
-//#include "Ruut.h"
 #include "Dawg.h"
 #include "Kaik.h"
-//#include "Kaik.h"
 
 using namespace std;
 
