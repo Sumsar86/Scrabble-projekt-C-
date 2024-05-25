@@ -1,7 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <bitset>
 #include "Dawg.h"
 
 using namespace std;

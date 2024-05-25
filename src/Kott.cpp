@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Kott.h"
 
 // Eesti keelsetele reeglitele vastav kott, kus on õige arv kõiki nuppe.
