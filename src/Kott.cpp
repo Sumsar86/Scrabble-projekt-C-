@@ -112,3 +112,7 @@ shared_ptr<Nupp> Kott::vahetaNupp(const shared_ptr<Nupp> &vana_nupp) {
 int Kott::getNuppudeArv() const {
     return m_nuppude_arv;
 }
+
+void Kott::print() const {
+    cout << *this << "\n";
+}

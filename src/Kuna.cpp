@@ -11,6 +11,8 @@ ostream &operator<<(ostream &os, const Kuna &kuna) {
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     os << "nupud: ";
     for (const auto &it: kuna.m_nupud) {
+        if (!it)
+            return os;
         SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
         os << *it;
         SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
@@ -49,34 +51,46 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     for (const char &taht: tahed)
         nupud.emplace_back(kasSisaldabNuppu(taht), taht);
 
-    bool vastus{true};
-    for (int i = 0; i < nupud.size(); i++) {
-        // Kui nuppu ei olnud künal
-        if (nupud[i].first == nullptr) {
+    vector<char> leitudTahed;
+    for (const auto &p: nupud) {
+        if (p.first)
+            leitudTahed.push_back(p.first->getTaht());
+    }
+
+    for (char t: leitudTahed) {
+        tahed.erase(find(tahed.begin(), tahed.end(), t));
+    }
+
+    if (!tahed.empty()) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nNuppu ei ole künal (";
+        for (char t: tahed) {
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+            cout << t;
             SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
-            cout << "\nKüna: ";
-            for (const auto &n: m_nupud)
-                cout << *n << ", ";
-            cout << "\nNupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
-            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
-            vastus = false;
-            continue;
+            cout << ", ";
         }
-        for (int j = 0; j < m_nupud.size(); j++)
-            if (m_nupud[j]->getTaht() == tahed[i]) {
+        cout << ")!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+        return false;
+    }
+
+    for (char taht: leitudTahed) {
+        for (int j = 0; j < m_nupud.size(); j++) {
+            if (m_nupud[j]->getTaht() == taht) {
                 m_nupud.erase(m_nupud.begin() + j);
                 break;
             }
-        m_nupud.push_back(kott->vahetaNupp(nupud[i].first));
-    }
-
-    if (!vastus) {
-        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
-        cout << "\nKõiki nuppe ei õnnestunud välja vahetada!\n";
-        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+        }
+        for (const auto &nupp: nupud) {
+            if (nupp.first->getTaht() == taht) {
+                m_nupud.push_back(kott->vahetaNupp(nupp.first));
+                break;
+            }
+        }
     }
     // Kas kõik tähed said vahetatud.
-    return vastus;
+    return true;
 }
 
 int Kuna::mituNuppuKunal() const {
@@ -96,7 +110,7 @@ bool Kuna::kasSisaldabKaiku(const shared_ptr<Kaik> &kaik) {
 
     for_each(nupud.begin(), nupud.end(), [](auto &el) { el.second = 0; });
 
-    for_each(m_nupud.begin(), m_nupud.end(), [&nupud](auto el) { ++nupud[el->getTaht()]; });
+    for_each(m_nupud.begin(), m_nupud.end(), [&nupud](auto el) { if (el) ++nupud[el->getTaht()]; });
 
     for (const auto &k: kaik->getKaik()) {
         char taht = k.second->getTaht();
@@ -113,19 +127,29 @@ bool Kuna::kasSisaldabKaiku(const shared_ptr<Kaik> &kaik) {
 
 void Kuna::eemaldaNupud(const shared_ptr<Kaik> &kaik) {
     for (const auto &k: kaik->getKaik()) {
-        for (int i = 0; i < m_nupud.size(); i++) {
-            if (m_nupud[i]->getTaht() == k.second->getTaht()) {
-                m_nupud.erase(m_nupud.begin() + i);
-            }
+        for (int i = m_nupud.size() - 1; i >= 0; i--) {
             char taht = k.second->getTaht();
-            if ((taht >= 97 && taht <= 122 || taht == '#') && m_nupud[i]->getTaht() == '?')
+            if (!m_nupud[i])
+                continue;
+            if (m_nupud[i]->getTaht() == taht) {
                 m_nupud.erase(m_nupud.begin() + i);
+                break;
+            }
+            if ((taht >= 97 && taht <= 122 || taht == '#') && m_nupud[i]->getTaht() == '?') {
+                m_nupud.erase(m_nupud.begin() + i);
+                break;
+            }
         }
     }
 }
 
 bool Kuna::kasTyhi() {
-    return m_nupud.empty();
+    int summa = 0;
+    for (const auto &nupp: m_nupud) {
+        if (nupp)
+            summa++;
+    }
+    return summa == 0;
 }
 
 int Kuna::kunaNuppudePunktid() const {

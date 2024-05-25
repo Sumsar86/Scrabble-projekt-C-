@@ -2,8 +2,12 @@
 
 #define WIN32_LEAN_AND_MEAN  // windows.h on imelik
 #include <windows.h>
+//#include <locale>
+//#include <codecvt>
 #include <set>
 #include <map>
+
+#define tapitahed
 
 using namespace std;
 
@@ -14,7 +18,7 @@ const static set<short> KAHEKORDSED_TAHED = {3, 11, 36, 38, 45, 52, 59, 92, 96, 
                                          172, 179, 186, 188, 213, 221};
 const static set<short> KOLMEKORDSED_TAHED = {20, 24, 76, 80, 84, 88, 136, 140, 144, 148, 200, 204};
 const static set<short> KAHEKORDSED_SONAD = {16, 28, 32, 42, 48, 56, 64, 70, 112, 154, 160, 168, 176, 182, 192, 196, 208};
-const static set<short> KOLMEKORDSED_SONAD = {0, 14, 105, 119, 210, 224};
+const static set<short> KOLMEKORDSED_SONAD = {0, 7, 14, 105, 119, 210, 217, 224};
 
 // Kõigi tähtede punktid (väikesed on tühjad ruudud, seega punkte ei anna)
 static map<char, int> TAHE_PUNKTID = {{'A', 1},

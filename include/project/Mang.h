@@ -15,6 +15,8 @@ private:
 public:
     Mang();
 
+    Mang(const shared_ptr<Kott> &kott);
+
     void jargmineKaik(const shared_ptr<Mangija> &mangija);
 
     shared_ptr<Mangija> jargmineMangija();
@@ -23,8 +25,9 @@ public:
 
     void lopetaMang(const shared_ptr<Mangija> &mangija);
 
-private:
+    int mangijateArv();
 
+private:
     static string kysiMangijateArv();
 
     void kysiMangijateNimed(int mangijate_arv);

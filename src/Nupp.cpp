@@ -5,7 +5,50 @@ Nupp::Nupp(char taht, short punktid, bool tyhi) : m_taht(taht), m_punktid(punkti
 
 // Nupu kuvamiseks ekraanil
 std::ostream &operator<<(std::ostream &os, const Nupp &nupp) {
+#ifdef tapitahed
+    switch (nupp.getTaht()) {
+        case 'Q':
+            os << "Õ";
+            break;
+        case 'q':
+            os << "õ";
+            break;
+        case 'X':
+            os << "Ä";
+            break;
+        case 'x':
+            os << "ä";
+            break;
+        case 'C':
+            os << "Ö";
+            break;
+        case 'c':
+            os << "ö";
+            break;
+        case 'Y':
+            os << "Ü";
+            break;
+        case 'y':
+            os << "ü";
+            break;
+        case '$':
+            os << "Š";
+            break;
+        case '#':
+            os << "š";
+            break;
+        case 'W':
+            os << "Ž";
+            break;
+        case 'w':
+            os << "ž";
+            break;
+        default:
+            os << nupp.getTaht();
+    }
+#else
     os << nupp.getTaht();
+#endif
     return os;
 }
 
