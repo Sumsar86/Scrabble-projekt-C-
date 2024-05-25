@@ -2,8 +2,12 @@
 
 #define WIN32_LEAN_AND_MEAN  // windows.h on imelik
 #include <windows.h>
+//#include <locale>
+//#include <codecvt>
 #include <set>
 #include <map>
+
+#define tapitahed
 
 using namespace std;
 

@@ -2,6 +2,16 @@
 
 // Kui uus sõna panna rea lõppu, kas see läheb järgmisele reale
 int main() {
+//#ifdef _WIN32
+//    SetConsoleOutputCP(CP_UTF8);
+//    SetConsoleCP(CP_UTF8);
+//#endif
+//
+//    std::locale::global(std::locale(""));
+//
+//    std::wcout.imbue(std::locale());
+//    std::wcin.imbue(std::locale());
+
     Mang mang{};
     shared_ptr<Mangija> praegune_mangija;
     while (!mang.kasMangLabi(praegune_mangija)) {
@@ -178,6 +188,9 @@ string Mang::kysiSona() {
     cout << "): ";
     string sona;
     getline(cin, sona);
+#ifdef tapitahed
+
+#endif
     return sona;
 }
 
@@ -261,6 +274,7 @@ bool Mang::vahetaTahti(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
     if (tahed.empty())
         return false;
 
+//    m_kott->print();
     if (!mangija->vahetaNupud(tahed)) {
         tahed.clear();
         SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
@@ -268,6 +282,7 @@ bool Mang::vahetaTahti(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
         SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
+
 
     tahed.clear();
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));

@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Lisasime ? toe ja parandasime vigu.">
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Värvi uuendus: Tegin kõik ilusti värviliseks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-be611cba616e842f3b06.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-9006da491f71c5b7cf6b.json" beforeDir="false" />
@@ -30,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-5d6a4b8b5c2b217bd4d9.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Dawg.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kaik.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Kott.cpp.obj" afterDir="false" />
@@ -40,26 +41,15 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Nupp.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Nupp.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Scrabble_projekt_C_.dir/src/Ruut.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Dawg.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Dawg.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Kaik.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kaik.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/project/Konstandid.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Konstandid.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/project/Kott.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kott.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Kuna.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kuna.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Laud.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Laud.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Mang.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mang.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Mangija.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mangija.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Nupp.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Nupp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Ruut.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Ruut.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dawg.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dawg.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kaik.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kaik.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kott.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kott.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kuna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kuna.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Laud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Laud.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mang.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mang.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mangija.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mangija.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ruut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ruut.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nupp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nupp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +112,11 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scrabble_projekt_C_" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Scrabble_projekt_C_" TARGET_NAME="Scrabble_projekt_C_" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Scrabble_projekt_C_" RUN_TARGET_NAME="Scrabble_projekt_C_">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -151,7 +146,7 @@
       <workItem from="1716379775376" duration="4000" />
       <workItem from="1716379798585" duration="10766000" />
       <workItem from="1716549921115" duration="12928000" />
-      <workItem from="1716631740723" duration="19389000" />
+      <workItem from="1716631740723" duration="25730000" />
     </task>
     <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
       <option name="closed" value="true" />
@@ -265,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716646218129</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Värvi uuendus: Tegin kõik ilusti värviliseks">
+      <option name="closed" value="true" />
+      <created>1716651284356</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716651284356</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +302,7 @@
     <MESSAGE value="Peaaegu töötab" />
     <MESSAGE value="Lammustasin järgmise käigu monstrumfunktsiooni (peaaegu) tuhandeks tükiks" />
     <MESSAGE value="Lisasime ? toe ja parandasime vigu." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lisasime ? toe ja parandasime vigu." />
+    <MESSAGE value="Värvi uuendus: Tegin kõik ilusti värviliseks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Värvi uuendus: Tegin kõik ilusti värviliseks" />
   </component>
 </project>

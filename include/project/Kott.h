@@ -35,4 +35,5 @@ public:
 
     friend ostream &operator<<(ostream &os, const Kott &kott);
 
+    void print() const;
 };
