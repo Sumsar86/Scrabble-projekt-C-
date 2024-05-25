@@ -1,10 +1,5 @@
 #pragma once
 
-#include <vector>
-#include <memory>
-#include <iostream>
-#include <ostream>
-//#include "Nupp.h"
 #include "Kott.h"
 #include "Laud.h"
 
@@ -24,6 +19,8 @@ public:
 
     bool vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott);
 
+    bool kasTyhi();
+
     void lisaNupp(const shared_ptr<Nupp> &nupp);
 
     friend ostream &operator<<(ostream &os, const Kuna &kuna);
@@ -31,4 +28,6 @@ public:
     int mituNuppuKunal() const;
 
     short getMaxArvNuppeKunal() const;
+
+    int kunaNuppudePunktid() const;
 };

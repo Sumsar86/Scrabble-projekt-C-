@@ -109,13 +109,13 @@ int Laud::leiaSonaLoppVeerus(int indeks) {
 // Laua ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Laud &laud) {
     os << "\n";
-//    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int i{0}; i < 15; i++) {
         if (i < 9)
             os << ' ';
-//        SetConsoleTextAttribute(hConsole, static_cast<WORD>(i % 16));
-        os << i + 1 << " | ";
-//        SetConsoleTextAttribute(hConsole, static_cast<WORD>(15));
+        os << i + 1;
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        os << " | ";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
 
         for (int j{0}; j < 15; j++) {
             short index = i * 15 + j;
@@ -123,7 +123,9 @@ ostream &operator<<(ostream &os, const Laud &laud) {
         }
         os << '\n';
     }
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
     os << "   +---------------------------------------------\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
     os << "      A  B  C  D  E  F  G  H  I  J  K  L  M  N  O\n";
     return os << "\n";
 }
@@ -131,19 +133,32 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 // Kutsub käigu kontrollimise funktsioonid välja ja tagastab sõna eest saadud punktid.
 // Kui sõna pole olemas tagastab -1.
 int Laud::kontrolli(const shared_ptr<Kaik> &kaik) {
-    if (kontrolliPos(kaik)) return kontrolliSonu(kaik);
-    return -1;
+    if (!kontrolliPos(kaik)) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSõna positsioon on vale!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+        return -1;
+    }
+    int tulemus = kontrolliSonu(kaik);
+    if (tulemus < 0) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nSõna pole sõnastikus!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+    }
+
+    return tulemus;
 }
 
 // Kontrollib, kas käidav käik asetseb laual vastavalt reeglitele
 bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
     bool onReas = kaik->yhesReas();
     bool onVeerus = kaik->yhesVeerus();
-    cout << "\nrida: " << onReas << ", veerg: " << onVeerus << "\n";
     int indeks, viimane;
     // Käik pole sirges reas ega veerus
     if (!(onReas || onVeerus)) {
-        cerr << "\nEi ole reas ega veerus!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nEi ole reas ega veerus!";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
     }
 
@@ -176,7 +191,9 @@ bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
     if (kasEsimeneKaik()) {
         // Kui käigus pole nuppu, mis asetatakse laua keskmisele ruudule
         if (!(kaik->kasIndeksOlemas(m_mangulaud.size() / 2))) {
-            cerr << "\nEsimene käik tuleb käia läbi keskmise ruudu!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+            cout << "\nEsimene käik tuleb käia läbi keskmise ruudu!";
+            SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             return false;
         }
         return true;
@@ -190,17 +207,6 @@ bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
                !kasIndeksTyhi(i - 15) ||
                !kasIndeksTyhi(i + 15);
     });
-//    for (int i: *kaik->getIndeksid()) {
-//        if (!kasIndeksTyhi(i - 1))
-//            return true;
-//        if (!kasIndeksTyhi(i + 1))
-//            return true;
-//        if (!kasIndeksTyhi(i - 15))
-//            return true;
-//        if (!kasIndeksTyhi(i + 15))
-//            return true;
-//    }
-//    return false;
 }
 
 //tagastab -1, kui pole korrektne sõna, tagastab korrektse sõna puhul selle punktid.
@@ -271,8 +277,10 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
                     ajutine += 15;
                 }
                 // Kui vertikaalset sõna ei ole olemas
-                if (teineSona.size() >= 2 && !(Dawg::kasSona(teineSona)))
+                if (teineSona.size() >= 2 && !(Dawg::kasSona(teineSona))) {
+//                    cout << sona << " " << teineSona << "\n";
                     return -1;
+                }
                 if (teineSona.size() >= 2 && Dawg::kasSona(teineSona)) punktid += teiseSonaKordaja * teiseSonaPunktid;
                 // Lisame käidud tähe sõnale otsa
                 sona += kaik->getNupp(praegune)->getTaht();
@@ -295,9 +303,12 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             praegune += 1;
         } while (praegune != leiaSonaLoppReas(kaik->viimaneIndeks()) + 1);
         // Kas on päris sõna, siis tagastame sõna eest saadud punktid
+        if (sona.length() == 1)
+            return punktid;
         if (Dawg::kasSona(sona))
             return punktid + sonaKordaja * sonaPunktid;
         // Sellist sõna pole olemas
+//        cout << sona << " (" << teineSona << ")\n";
         return -1;
     }
 

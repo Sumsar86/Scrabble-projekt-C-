@@ -48,7 +48,9 @@ Kott::Kott() : m_nupud(m_vaike_kott), m_nuppude_arv(0) {
 // Tagastab kotist juhusliku nupu. Kui nuppe pole tagastab nullptr.
 shared_ptr<Nupp> Kott::getJuhuslikNupp() {
     if (m_nuppude_arv <= 0) {
-        cerr << "Kott on juba tühi! Nuppu ei tagastatud.\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "Kott on juba tühi! Nuppu ei tagastatud.\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return nullptr;
     }
 

@@ -1,14 +1,8 @@
 #pragma once
 
-#include <map>
-#include <memory>
 #include <vector>
 #include <algorithm>
-#include <iostream>
 #include "Ruut.h"
-#include "Konstandid.h"
-//#include "Laud.h"
-//#include "Nupp.h"
 
 class Kaik {
 private:

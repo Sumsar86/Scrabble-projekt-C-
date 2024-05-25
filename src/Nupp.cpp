@@ -1,7 +1,7 @@
 #include "Nupp.h"
 
 // Nupu konstruktor
-Nupp::Nupp(char taht, short punktid) : m_taht(taht), m_punktid(punktid) {}
+Nupp::Nupp(char taht, short punktid, bool tyhi) : m_taht(taht), m_punktid(punktid), m_tyhi(tyhi) {}
 
 // Nupu kuvamiseks ekraanil
 std::ostream &operator<<(std::ostream &os, const Nupp &nupp) {
@@ -50,6 +50,15 @@ const char &Nupp::getTaht() const {
 
 // Tagastab nupu punktid
 short Nupp::getPunktid() const {
+    if (m_tyhi)
+        return 0;
     return m_punktid;
 }
 
+void Nupp::setTyhi(bool tyhi) {
+    m_tyhi = tyhi;
+}
+
+bool Nupp::kasTyhiNupp() const {
+    return m_tyhi;
+}
