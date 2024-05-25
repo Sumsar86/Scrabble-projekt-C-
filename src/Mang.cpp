@@ -2,19 +2,33 @@
 
 // Kui uus sõna panna rea lõppu, kas see läheb järgmisele reale
 int main() {
-//#ifdef _WIN32
-//    SetConsoleOutputCP(CP_UTF8);
-//    SetConsoleCP(CP_UTF8);
-//#endif
-//
-//    std::locale::global(std::locale(""));
-//
-//    std::wcout.imbue(std::locale());
-//    std::wcin.imbue(std::locale());
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
+    cout <<
+         "                                             ___       ___       ___\n"
+         "                                            (   )     (   )     (   )/\n"
+         "     .--.      .--.     ___ .-.      .---.   | |.-.    | |.-.    | |    .--.   \n"
+         "   /  _  \\    /    \\   (   )   \\    / .-, \\  | /   \\   | /   \\   | |   /    \\  \n"
+         "  . .' `. ;  |  .-. ;   | ' .-. ;  (__) ; |  |  .-. |  |  .-. |  | |  |  .-. ; \n"
+         "  | '   | |  |  |(___)  |  / (___)   .'`  |  | |  | |  | |  | |  | |  |  | | | \n"
+         "  _\\_`.(___) |  |       | |         / .'| |  | |  | |  | |  | |  | |  |  |/  | \n"
+         " (   ). '.   |  | ___   | |        | /  | |  | |  | |  | |  | |  | |  |  ' _.' \n"
+         "  | |  `\\ |  |  '(   )  | |        ; |  ; |  | '  | |  | '  | |  | |  |  .'.-. \n"
+         "  ; '._,' '  '  `-' |   | |        ' `-'  |  ' `-' ;   ' `-' ;   | |  '  `-' / \n"
+         "   '.___.'    `.__,'   (___)       `.__.'_.   `.__.     `.__.   (___)  `.__.'  \n"
+         "\n";
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
 
     Mang mang{};
+
+    if (mang.mangijateArv() < 1) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
+        cout << "\nLiiga vähe mängijaid!\n";
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+    }
+
     shared_ptr<Mangija> praegune_mangija;
     while (!mang.kasMangLabi(praegune_mangija)) {
+        cout << "\n<~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~>\n";
         praegune_mangija = mang.jargmineMangija();
         mang.jargmineKaik(praegune_mangija);
     }
@@ -23,10 +37,20 @@ int main() {
     return 0;
 }
 
-Mang::Mang() : m_kott(make_shared<Kott>()),
-               m_laud(Laud()),
-               m_praeguse_mangija_id(0),
-               m_vahele_jaetud_kaikude_arv(0) {
+Mang::Mang() :
+        m_kott(make_shared<Kott>()),
+        m_laud(Laud()),
+        m_praeguse_mangija_id(0),
+        m_vahele_jaetud_kaikude_arv(0) {
+    string mangijate_arv = kysiMangijateArv();
+    kysiMangijateNimed(stoi(mangijate_arv));
+}
+
+Mang::Mang(const shared_ptr<Kott> &kott) :
+        m_kott(kott),
+        m_laud(Laud()),
+        m_praeguse_mangija_id(0),
+        m_vahele_jaetud_kaikude_arv(0) {
     string mangijate_arv = kysiMangijateArv();
     kysiMangijateNimed(stoi(mangijate_arv));
 }
@@ -246,9 +270,10 @@ bool Mang::kaiSona(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
 
     mangija->taidaKuna();
 
-    cout << m_laud << "\n";
+    cout << m_laud;
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
-    cout << "Uus küna: " << *mangija->getKuna() << "\n";
+    if (!mangija->getKuna()->kasTyhi())
+        cout << "Uus küna: " << *mangija->getKuna() << "\n\n";
 
     return true;
 }
@@ -298,7 +323,6 @@ bool Mang::kasMangLabi(const shared_ptr<Mangija> &mangija) {
         return true;
     if (mangija->getKuna()->kasTyhi() && m_kott->kas_on_tuhi())
         return true;
-
     return false;
 }
 
@@ -329,7 +353,8 @@ void Mang::lopetaMang(const shared_ptr<Mangija> &mangija) {
 
     int teiste_mangijate_punktid = 0;
     for (const auto &p: m_mangijad) {
-        if (p.second != mangija) {
+
+        if (p.second && p.second != mangija) {
             mangija_kaotatud_punktid = p.second->getKuna()->kunaNuppudePunktid();
             teiste_mangijate_punktid += mangija_kaotatud_punktid;
             p.second->eemaldaPunktid(mangija_kaotatud_punktid);
@@ -365,4 +390,8 @@ void Mang::trykiTulemused() {
     for_each(mangijad.begin(), mangijad.end(), [](const auto &el) {
         cout << "  " << *el << "\n";
     });
+}
+
+int Mang::mangijateArv() {
+    return m_mangijad.size();
 }

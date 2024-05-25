@@ -12,14 +12,14 @@ Kaik::Kaik(string sona, string koordinaadid, string suund) {
     int y = stoi(koordinaadid.substr(1, koordinaadid.size() - 1)) - 1;
     int esimeneIndeks = y * 15 + x;
 
+    bool tyhi = false;
     switch (toupper(suund[0])) {
         case 'A':
             for (int i = 0; i < sona.size(); i++) {
-                if (esimeneIndeks + i * 15 > 244)
+                if (esimeneIndeks + i * 15 > 224)
                     throw invalid_argument("Indeks mängulaualt väljas!\n");
                 if (sona[i] == '*')
                     continue;
-                bool tyhi = false;
                 if (sona[i] >= 97 && sona[i] <= 122 || sona[i] == '#')
                     tyhi = true;
                 m_kaik[esimeneIndeks + i * 15] = make_shared<Nupp>(sona[i], TAHE_PUNKTID[sona[i]], tyhi);
@@ -27,11 +27,13 @@ Kaik::Kaik(string sona, string koordinaadid, string suund) {
             break;
         case 'P':
             for (int i = 0; i < sona.size(); i++) {
-                if (esimeneIndeks + i > 244)
+                if (esimeneIndeks + i > 224)
                     throw invalid_argument("Indeks mängulaualt väljas!\n");
                 if (sona[i] == '*')
                     continue;
-                m_kaik[esimeneIndeks + i] = make_shared<Nupp>(sona[i], TAHE_PUNKTID[sona[i]]);
+                if (sona[i] >= 97 && sona[i] <= 122 || sona[i] == '#')
+                    tyhi = true;
+                m_kaik[esimeneIndeks + i] = make_shared<Nupp>(sona[i], TAHE_PUNKTID[sona[i]], tyhi);
             }
             break;
     }

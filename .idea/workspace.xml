@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Värvi uuendus: Tegin kõik ilusti värviliseks">
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Mäng on terve ja valmis (äkki)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-be611cba616e842f3b06.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-9006da491f71c5b7cf6b.json" beforeDir="false" />
@@ -45,11 +45,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/project/Konstandid.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Konstandid.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/project/Kott.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kott.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kott.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kott.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Mang.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mang.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kaik.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kaik.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kuna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kuna.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mang.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mang.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nupp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nupp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,7 @@
       <workItem from="1716379775376" duration="4000" />
       <workItem from="1716379798585" duration="10766000" />
       <workItem from="1716549921115" duration="12928000" />
-      <workItem from="1716631740723" duration="25730000" />
+      <workItem from="1716631740723" duration="32265000" />
     </task>
     <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
       <option name="closed" value="true" />
@@ -268,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716651284356</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Mäng on terve ja valmis (äkki)">
+      <option name="closed" value="true" />
+      <created>1716659579158</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716659579158</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +310,7 @@
     <MESSAGE value="Lammustasin järgmise käigu monstrumfunktsiooni (peaaegu) tuhandeks tükiks" />
     <MESSAGE value="Lisasime ? toe ja parandasime vigu." />
     <MESSAGE value="Värvi uuendus: Tegin kõik ilusti värviliseks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Värvi uuendus: Tegin kõik ilusti värviliseks" />
+    <MESSAGE value="Mäng on terve ja valmis (äkki)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mäng on terve ja valmis (äkki)" />
   </component>
 </project>
