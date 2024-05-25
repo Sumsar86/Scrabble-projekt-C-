@@ -8,7 +8,7 @@ Mangija::Mangija(shared_ptr<Kott> &kott, string nimi) : mp_kott(kott),
 
 // Mängija ekraanile kuvamiseks
 ostream &operator<<(ostream &os, const Mangija &mangija) {
-    os << "Mängija punktid: " << mangija.m_punktid << ", " << *mangija.m_kuna;
+    os << mangija.m_nimi << " punktid: " << mangija.m_punktid << ", " << *mangija.m_kuna;
     return os;
 }
 
@@ -29,7 +29,7 @@ bool Mangija::taidaKuna() {
     for (int i = m_kuna->mituNuppuKunal(); i < m_kuna->getMaxArvNuppeKunal(); i++) {
         shared_ptr<Nupp> uus_nupp = mp_kott->getJuhuslikNupp();
         if (uus_nupp == nullptr) {
-            cout << "Kott sai tühjaks. Küna ei saa rohkem täita.\n";
+            cerr << "Kott sai tühjaks. Küna ei saa rohkem täita.\n";
             return false;
         }
         m_kuna->lisaNupp(uus_nupp);
@@ -47,4 +47,8 @@ const shared_ptr<Kuna> &Mangija::getKuna() const {
 
 void Mangija::eemaldaNupud(const shared_ptr<Kaik> &kaik) {
     m_kuna->eemaldaNupud(kaik);
+}
+
+void Mangija::eemaldaPunktid(int punktid) {
+    m_punktid -= punktid;
 }

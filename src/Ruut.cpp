@@ -43,7 +43,7 @@ ostream &operator<<(ostream &os, const Ruut &ruut) {
         return os;
     }
     // Kui ruudul on nupp, siis kordajaid ei kuvata
-    os << *(ruut.getNupp());
+    os << " " << *(ruut.getNupp());
     return os;
 }
 

@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <iostream>
+#include <ranges>
 #include "Mangija.h"
 //#include "Laud.h"
 
@@ -18,16 +19,31 @@ private:
 public:
     Mang();
 
-    void jargmineKaik();
+    void jargmineKaik(const shared_ptr<Mangija> &mangija);
+
+    shared_ptr<Mangija> jargmineMangija();
+
+    bool kasMangLabi(const shared_ptr<Mangija> &mangija);
+
+    void lopetaMang(const shared_ptr<Mangija> &mangija);
 
 private:
-    shared_ptr<Mangija> jargmineMangija();
+
     static string kysiMangijateArv();
+
     void kysiMangijateNimed(int mangijate_arv);
+
     static string kysiKoordinaadid();
+
     static string kysiSuund();
+
     static string kysiSona();
-    bool kaiSona(const shared_ptr<Mangija>& mangija, bool &oige_vastus);
-    void jataVahele(const shared_ptr<Mangija>& mangija, bool &oige_vastus);
-    void vahetaTahti(const shared_ptr<Mangija>& mangija, bool &oige_vastus);
+
+    bool kaiSona(const shared_ptr<Mangija> &mangija, bool &oige_vastus);
+
+    static void jataVahele(const shared_ptr<Mangija> &mangija, bool &oige_vastus);
+
+    static bool vahetaTahti(const shared_ptr<Mangija> &mangija, bool &oige_vastus);
+
+    void trykiTulemused();
 };

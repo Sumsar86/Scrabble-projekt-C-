@@ -33,4 +33,10 @@ public:
     const shared_ptr<Kuna> &getKuna() const;
 
     void lisaPunktid(int punktid);
+
+    void eemaldaPunktid(int punktid);
+
+    bool operator<(const Mangija& other) const {
+        return m_punktid < other.m_punktid;
+    }
 };

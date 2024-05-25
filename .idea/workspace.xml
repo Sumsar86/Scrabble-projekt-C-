@@ -20,7 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Peaaegu töötab">
+    <list default="true" id="f91d1e7b-6961-4885-a4f7-c86acdb0ec26" name="Changes" comment="Lammustasin järgmise käigu monstrumfunktsiooni (peaaegu) tuhandeks tükiks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-be611cba616e842f3b06.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-9006da491f71c5b7cf6b.json" beforeDir="false" />
@@ -44,8 +44,19 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Scrabble_projekt_C_.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Kuna.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Kuna.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Laud.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Laud.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/project/Mang.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mang.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Mangija.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Mangija.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Nupp.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Nupp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/project/Ruut.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/project/Ruut.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kaik.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kaik.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kuna.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kuna.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Laud.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Laud.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mang.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mang.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mangija.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mangija.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Nupp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nupp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ruut.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ruut.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +148,7 @@
       <workItem from="1716379775376" duration="4000" />
       <workItem from="1716379798585" duration="10766000" />
       <workItem from="1716549921115" duration="12928000" />
-      <workItem from="1716631740723" duration="1820000" />
+      <workItem from="1716631740723" duration="14391000" />
     </task>
     <task id="LOCAL-00001" summary="Eemaldasin Dawg2.cpp">
       <option name="closed" value="true" />
@@ -235,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716563020515</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Lammustasin järgmise käigu monstrumfunktsiooni (peaaegu) tuhandeks tükiks">
+      <option name="closed" value="true" />
+      <created>1716633802953</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716633802953</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +286,7 @@
     <MESSAGE value="Parandasin veateateid" />
     <MESSAGE value="Värviline!" />
     <MESSAGE value="Peaaegu töötab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Peaaegu töötab" />
+    <MESSAGE value="Lammustasin järgmise käigu monstrumfunktsiooni (peaaegu) tuhandeks tükiks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lammustasin järgmise käigu monstrumfunktsiooni (peaaegu) tuhandeks tükiks" />
   </component>
 </project>

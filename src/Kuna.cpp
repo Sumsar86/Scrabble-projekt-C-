@@ -44,6 +44,9 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     for (int i = 0; i < nupud.size(); i++) {
         // Kui nuppu ei olnud künal
         if (nupud[i].first == nullptr) {
+            cerr << "\nKüna: ";
+            for (const auto& n : m_nupud)
+                cerr << *n << ", ";
             cerr << "\nNupp ei ole künal! (" + string(1, nupud[i].second) + ")\n";
             vastus = false;
             continue;
@@ -75,27 +78,45 @@ void Kuna::lisaNupp(const shared_ptr<Nupp> &nupp) {
 }
 
 bool Kuna::kasSisaldabKaiku(const shared_ptr<Kaik> &kaik) {
-    map<char, int> nupud;
-//    cout << "3\n";
+    map<char, int> nupud(TAHE_PUNKTID.begin(), TAHE_PUNKTID.end());
+
+    for_each(nupud.begin(), nupud.end(), [](auto &el) { el.second = 0; });
+
     for_each(m_nupud.begin(), m_nupud.end(), [&nupud](auto el) { ++nupud[el->getTaht()]; });
-//    cout << "4\n";
-    for (const auto& k : kaik->getKaik()) {
-//        cout << *k.second << " " << nupud[k.second->getTaht()] << " ";
-        --nupud[k.second->getTaht()];
-//        cout << nupud[k.second->getTaht()] << "\n";
+
+    for (const auto &k: kaik->getKaik()) {
+        char taht = k.second->getTaht();
+        if (taht >= 97 && taht <= 122 || taht == '#')
+            --nupud['?'];
+        else
+            --nupud[taht];
     }
 //    for_each(kaik->getKaik().begin(), kaik->getKaik().end(), [&nupud](auto el) { --nupud[el.second->getTaht()]; });
-//    cout << "5\n";
+
+// Trüki nupud, mida pole, välja
     return !any_of(nupud.begin(), nupud.end(), [](auto el) { return el.second < 0; });
 }
 
 void Kuna::eemaldaNupud(const shared_ptr<Kaik> &kaik) {
-    for (const auto& k: kaik->getKaik()) {
+    for (const auto &k: kaik->getKaik()) {
         for (int i = 0; i < m_nupud.size(); i++) {
             if (m_nupud[i]->getTaht() == k.second->getTaht()) {
                 m_nupud.erase(m_nupud.begin() + i);
             }
+            char taht = k.second->getTaht();
+            if ((taht >= 97 && taht <= 122 || taht == '#') && m_nupud[i]->getTaht() == '?')
+                m_nupud.erase(m_nupud.begin() + i);
         }
     }
+}
 
+bool Kuna::kasTyhi() {
+    return m_nupud.empty();
+}
+
+int Kuna::kunaNuppudePunktid() const {
+    int punktid = 0;
+    for (const auto &nupp: m_nupud)
+        punktid += nupp->getPunktid();
+    return punktid;
 }

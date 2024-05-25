@@ -131,15 +131,20 @@ ostream &operator<<(ostream &os, const Laud &laud) {
 // Kutsub käigu kontrollimise funktsioonid välja ja tagastab sõna eest saadud punktid.
 // Kui sõna pole olemas tagastab -1.
 int Laud::kontrolli(const shared_ptr<Kaik> &kaik) {
-    if (kontrolliPos(kaik)) return kontrolliSonu(kaik);
-    return -1;
+    if (!kontrolliPos(kaik)) {
+        cerr << "\nSõna positsioon on vale!";
+        return -1;
+    }
+    int tulemus = kontrolliSonu(kaik);
+    if (tulemus < 0)
+        cerr << "\nSõna pole sõnastikus!";
+    return tulemus;
 }
 
 // Kontrollib, kas käidav käik asetseb laual vastavalt reeglitele
 bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
     bool onReas = kaik->yhesReas();
     bool onVeerus = kaik->yhesVeerus();
-    cout << "\nrida: " << onReas << ", veerg: " << onVeerus << "\n";
     int indeks, viimane;
     // Käik pole sirges reas ega veerus
     if (!(onReas || onVeerus)) {
@@ -190,17 +195,6 @@ bool Laud::kontrolliPos(const shared_ptr<Kaik> &kaik) {
                !kasIndeksTyhi(i - 15) ||
                !kasIndeksTyhi(i + 15);
     });
-//    for (int i: *kaik->getIndeksid()) {
-//        if (!kasIndeksTyhi(i - 1))
-//            return true;
-//        if (!kasIndeksTyhi(i + 1))
-//            return true;
-//        if (!kasIndeksTyhi(i - 15))
-//            return true;
-//        if (!kasIndeksTyhi(i + 15))
-//            return true;
-//    }
-//    return false;
 }
 
 //tagastab -1, kui pole korrektne sõna, tagastab korrektse sõna puhul selle punktid.
@@ -271,8 +265,10 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
                     ajutine += 15;
                 }
                 // Kui vertikaalset sõna ei ole olemas
-                if (teineSona.size() >= 2 && !(Dawg::kasSona(teineSona)))
+                if (teineSona.size() >= 2 && !(Dawg::kasSona(teineSona))) {
+//                    cout << sona << " " << teineSona << "\n";
                     return -1;
+                }
                 if (teineSona.size() >= 2 && Dawg::kasSona(teineSona)) punktid += teiseSonaKordaja * teiseSonaPunktid;
                 // Lisame käidud tähe sõnale otsa
                 sona += kaik->getNupp(praegune)->getTaht();
@@ -295,9 +291,12 @@ int Laud::kontrolliSonu(const shared_ptr<Kaik> &kaik) { //eeldame, et käik on k
             praegune += 1;
         } while (praegune != leiaSonaLoppReas(kaik->viimaneIndeks()) + 1);
         // Kas on päris sõna, siis tagastame sõna eest saadud punktid
+        if (sona.length() == 1)
+            return punktid;
         if (Dawg::kasSona(sona))
             return punktid + sonaKordaja * sonaPunktid;
         // Sellist sõna pole olemas
+//        cout << sona << " (" << teineSona << ")\n";
         return -1;
     }
 

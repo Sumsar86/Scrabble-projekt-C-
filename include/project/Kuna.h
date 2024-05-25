@@ -24,6 +24,8 @@ public:
 
     bool vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott);
 
+    bool kasTyhi();
+
     void lisaNupp(const shared_ptr<Nupp> &nupp);
 
     friend ostream &operator<<(ostream &os, const Kuna &kuna);
@@ -31,4 +33,6 @@ public:
     int mituNuppuKunal() const;
 
     short getMaxArvNuppeKunal() const;
+
+    int kunaNuppudePunktid() const;
 };
