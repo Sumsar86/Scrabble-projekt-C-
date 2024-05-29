@@ -122,7 +122,7 @@ string Mang::kysiMangijateArv() {
     while (true) {
         try {
             SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
-            cout << "Sisesta mängijate arv: ";
+            cout << "\nSisesta mängijate arv: ";
             SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
             getline(cin, mangijate_arv);
             if (stoi(mangijate_arv) < 1 || stoi(mangijate_arv) > 4)
