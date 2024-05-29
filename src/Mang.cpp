@@ -1,6 +1,9 @@
 #include "Mang.h"
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     cout <<
          "                                             ___       ___       ___\n"

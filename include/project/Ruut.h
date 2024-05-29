@@ -3,6 +3,7 @@
 #include <memory>
 #include "Nupp.h"
 
+
 using namespace std;
 
 class Ruut {
