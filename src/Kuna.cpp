@@ -64,12 +64,17 @@ bool Kuna::vahetaNupp(vector<char> &tahed, shared_ptr<Kott> &kott) {
     if (!tahed.empty()) {
         SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
         cout << "\nNuppu ei ole künal (";
+        char viimane = tahed[tahed.size() - 1];
+        tahed.pop_back();
         for (char t: tahed) {
             SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
             cout << t;
             SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
             cout << ", ";
         }
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << viimane;
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(4));
         cout << ")!";
         SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
         return false;
@@ -157,4 +162,17 @@ int Kuna::kunaNuppudePunktid() const {
     for (const auto &nupp: m_nupud)
         punktid += nupp->getPunktid();
     return punktid;
+}
+
+void Kuna::printKuna() {
+    shared_ptr<Nupp> viimane = m_nupud[m_nupud.size() - 1];
+    for (int i = 0; i < m_nupud.size() - 1; i++) {
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+        cout << *m_nupud[i];
+        SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
+        cout << ", ";
+    }
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
+    cout << *viimane;
+    SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
 }

@@ -26,6 +26,8 @@ public:
 
     const shared_ptr<Kuna> &getKuna() const;
 
+    void printKuna();
+
     void lisaPunktid(int punktid);
 
     void eemaldaPunktid(int punktid);

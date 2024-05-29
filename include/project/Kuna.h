@@ -30,4 +30,6 @@ public:
     short getMaxArvNuppeKunal() const;
 
     int kunaNuppudePunktid() const;
+
+    void printKuna();
 };

@@ -54,14 +54,20 @@ shared_ptr<Nupp> Kott::getJuhuslikNupp() {
         return nullptr;
     }
 
-    // https://stackoverflow.com/questions/27024269/select-random-element-in-an-unordered-map
-    auto random_it = next(begin(m_nupud), m_juhuslik_arv(m_rng));
-    while (random_it->second <= 0)
-        random_it = next(begin(m_nupud), m_juhuslik_arv(m_rng));
-    random_it->second--;
+    unsigned int juhuarv = uniform_int_distribution<mt19937::result_type>(0, leiaNuppudeArv() - 1)(m_rng);
+    shared_ptr<Nupp> juhuslik_nupp;
+    int i = 0;
+    for (auto &p: m_nupud) {
+        if (p.second > juhuarv) {
+            p.second--;
+            juhuslik_nupp = p.first;
+            break;
+        }
+        juhuarv -= p.second;
+    }
     m_nuppude_arv--;
 
-    return random_it->first;
+    return juhuslik_nupp;
 }
 
 // Seab valmis juhuarvu generaatori.
@@ -78,7 +84,6 @@ void Kott::looJuhuarvuGeneraator() {
                             chrono::high_resolution_clock::now().time_since_epoch()
                     ).count());
     m_rng = mt19937(seed);
-    m_juhuslik_arv = uniform_int_distribution<mt19937::result_type>(0, m_nupud.size() - 1);
 }
 
 // Koti ekraanile kuvamiseks.
@@ -90,9 +95,11 @@ ostream &operator<<(ostream &os, const Kott &kott) {
 }
 
 // Arvutab kotis olevate nuppude arvu ja salvestab selle privaatsesse muutujasse m_nuppude_arv.
-void Kott::leiaNuppudeArv() {
+unsigned int Kott::leiaNuppudeArv() {
+    m_nuppude_arv = 0;
     for (const auto &it: m_nupud)
         m_nuppude_arv += it.second;
+    return m_nuppude_arv;
 }
 
 // Tagastab tõeväärtuse, kas kott on tühi või mitte.
@@ -109,10 +116,6 @@ shared_ptr<Nupp> Kott::vahetaNupp(const shared_ptr<Nupp> &vana_nupp) {
 }
 
 // Tagastab kotis olevate nuppude arvu.
-int Kott::getNuppudeArv() const {
+unsigned int Kott::getNuppudeArv() const {
     return m_nuppude_arv;
-}
-
-void Kott::print() const {
-    cout << *this << "\n";
 }

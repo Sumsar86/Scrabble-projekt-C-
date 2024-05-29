@@ -15,7 +15,8 @@ ostream &operator<<(ostream &os, const Mangija &mangija) {
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(2));
     os << mangija.m_punktid;
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
-    os << ", " << *mangija.m_kuna;
+    os << ", küna: ";
+    mangija.m_kuna->printKuna();
     return os;
 }
 
@@ -52,6 +53,10 @@ bool Mangija::kasNupudKunal(const shared_ptr<Kaik> &kaik) {
 
 const shared_ptr<Kuna> &Mangija::getKuna() const {
     return m_kuna;
+}
+
+void Mangija::printKuna() {
+    m_kuna->printKuna();
 }
 
 void Mangija::eemaldaNupud(const shared_ptr<Kaik> &kaik) {

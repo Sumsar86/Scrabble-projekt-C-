@@ -11,14 +11,13 @@ private:
     static map<shared_ptr<Nupp>, int> m_vaike_kott;
 
     map<shared_ptr<Nupp>, int> m_nupud;
-    int m_nuppude_arv;
+    unsigned int m_nuppude_arv;
 
     mt19937 m_rng;
-    uniform_int_distribution<std::mt19937::result_type> m_juhuslik_arv;
 
     void looJuhuarvuGeneraator();
 
-    void leiaNuppudeArv();
+    unsigned int leiaNuppudeArv();
 
 public:
     explicit Kott(map<shared_ptr<Nupp>, int> nupud);
@@ -31,9 +30,7 @@ public:
 
     bool kas_on_tuhi() const;
 
-    int getNuppudeArv() const;
+    unsigned int getNuppudeArv() const;
 
     friend ostream &operator<<(ostream &os, const Kott &kott);
-
-    void print() const;
 };

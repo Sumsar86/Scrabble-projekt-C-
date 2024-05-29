@@ -1,6 +1,5 @@
 #include "Mang.h"
 
-// Kui uus sõna panna rea lõppu, kas see läheb järgmisele reale
 int main() {
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
     cout <<
@@ -14,8 +13,7 @@ int main() {
          " (   ). '.   |  | ___   | |        | /  | |  | |  | |  | |  | |  | |  |  ' _.' \n"
          "  | |  `\\ |  |  '(   )  | |        ; |  ; |  | '  | |  | '  | |  | |  |  .'.-. \n"
          "  ; '._,' '  '  `-' |   | |        ' `-'  |  ' `-' ;   ' `-' ;   | |  '  `-' / \n"
-         "   '.___.'    `.__,'   (___)       `.__.'_.   `.__.     `.__.   (___)  `.__.'  \n"
-         "\n";
+         "   '.___.'    `.__,'   (___)       `.__.'_.   `.__.     `.__.   (___)  `.__.'  \n\n";
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(7));
 
     Mang mang{};
@@ -212,9 +210,9 @@ string Mang::kysiSona() {
     cout << "): ";
     string sona;
     getline(cin, sona);
-#ifdef tapitahed
+//#ifdef tapitahed
 
-#endif
+//#endif
     return sona;
 }
 
@@ -272,8 +270,11 @@ bool Mang::kaiSona(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
 
     cout << m_laud;
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
-    if (!mangija->getKuna()->kasTyhi())
-        cout << "Uus küna: " << *mangija->getKuna() << "\n\n";
+    if (!mangija->getKuna()->kasTyhi()) {
+        cout << "Uus küna: ";
+        mangija->printKuna();
+        cout << "\n\n";
+    }
 
     return true;
 }
@@ -311,7 +312,9 @@ bool Mang::vahetaTahti(const shared_ptr<Mangija> &mangija, bool &oige_vastus) {
 
     tahed.clear();
     SetConsoleTextAttribute(H_CONSOLE, static_cast<WORD>(15));
-    cout << "Uus küna: " << *mangija->getKuna() << "\n";
+    cout << "Uus küna: ";
+    mangija->printKuna();
+    cout << "\n";
     return true;
 }
 
@@ -353,7 +356,6 @@ void Mang::lopetaMang(const shared_ptr<Mangija> &mangija) {
 
     int teiste_mangijate_punktid = 0;
     for (const auto &p: m_mangijad) {
-
         if (p.second && p.second != mangija) {
             mangija_kaotatud_punktid = p.second->getKuna()->kunaNuppudePunktid();
             teiste_mangijate_punktid += mangija_kaotatud_punktid;
